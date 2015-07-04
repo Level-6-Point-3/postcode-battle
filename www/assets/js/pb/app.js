@@ -1,7 +1,5 @@
 $(document).ready( function () {
-  var url = window.location.href.toString(),
-    urlArray = url.split("#"),
-    isBattleSpecified = false;
+  var url = window.location.href.toString();
 
   if(window.location.hash !== "") {
     var pattern = /^\#why-is-(.+)-better-than-(.+)$/,
@@ -17,6 +15,9 @@ $(document).ready( function () {
     }
   }
   else {
+    PB.LGAController.getLocalAuthorities();
+    PB.AttributeController.getAttributes();
+    
     $("#app-main").html(PB.templates.battleFieldStartTemplate());	
     $("#do-battle").click( function (e) {
       e.originalEvent.preventDefault();		
@@ -25,5 +26,8 @@ $(document).ready( function () {
 		  PB.Controller.doBattle({});
       window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace( "{good_key}", "a" ).replace( "{bad_key}", "b" );
     });
+    
+    // radio test.
+    radio("getLocalAuthority.done").subscribe(function (data) {debugger;});
   }
 });

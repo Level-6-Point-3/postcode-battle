@@ -1,7 +1,18 @@
 // low level lga rest API wrapping.
 PB.api = ( function ( module, $ ) {
+  var host = function () {
+    if(PB.env === "dev") {
+      return "localhost:8080";
+    }
+    else if (PB.env === "live") {
+      return "http://postcode-battle.serwylo.com";
+    }
+
+    return "";
+  };
+
   var initAjaxOptions = function () {
-    return { dataType: 'json', contentType: 'application/json'};	
+    return { dataType: 'json', contentType: 'application/json' };	
   };
   
   module.getAutorityNameHint = function ( text ) {

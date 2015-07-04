@@ -33,8 +33,7 @@ PB.Controller = (function (module) {
                 var betterOrWorse = isWinner ? "BETTER" : "WORSE";
                 var itemHeading = betterOrWorse + " " + attribute.name + "!";
                 attrDiv.append(PB.templates.attributeTemplate(itemHeading, label));
-            } // OMG SO l33t!?!!!
-
+            }
         };
 
         constructDiv( battle.winner, winnerId, true );
@@ -88,3 +87,65 @@ PB.Controller = (function (module) {
     
 	return module;
 })(PB.Controller || {});
+
+PB.BattleController = (function ( module, radio ) {
+  
+  module.getBattle = function ( winner, loser ) {
+    PB.api.getBattleByAttendees(winner, loser).then(function ( data ) {
+      radio("getBattle.done").broadcast( new PB.Battle ( data ) );
+    }, function (err) {});  
+  };
+  
+  return module;
+})(PB.BattleController || {}, radio);
+
+PB.LGAController = (function ( module, radio ) {
+  // name can also be partial.
+  module.searchAuthoritiesByNameTag = function ( name ) {
+    PB.api.getAuthorityNameHint( name ).then(function ( data ) {
+      // do something about authority name and id.
+      // temp code.
+      var authorities = [];
+          
+      for ( var index in data ) {
+        authorities.push( new PB.Authority( data[index] ) );
+      }
+
+      radio("searchAuthoritiesByNameTag.done").broadcast(authorities);
+    }, function ( err ) {} );
+  };
+    
+  // need to listen to getLocalAuthority.done event.
+  module.getLocalAuthority = function ( id ) {
+    PB.api.getLocalAuthorityById( id ).then(function ( data ) {
+      radio("getLocalAuthority.done").broadcast(new PB.Authority( data ));
+    }, function(err){});
+  };
+
+  module.getLocalAuthorities = function () {
+    PB.api.getLocalAuthorities().then(function (data) {
+      for (var index in data) {
+          PB.LGAs.push( new PB.Authority( data[index] ) );
+      }
+      
+      radio("getLocalAuthorities.done").broadcast();
+    }, function (err) {} );  
+  };
+  
+  return module;
+})(PB.LGAController || {}, radio);
+
+PB.AttributeController = (function (module, radio) {
+  module.getAttributes = function() {
+    PB.api.getAttributes().then(function( data ){
+
+      for (var index in data) {
+        PB.Attributes.push( new PB.Attribute( data[index] ) );
+      }
+      
+      radio("getLocalAuthorities.done").broadcast();
+    }, function(err){});
+  };
+  
+  return module;  
+})(PB.AttributeController || {}, radio);
