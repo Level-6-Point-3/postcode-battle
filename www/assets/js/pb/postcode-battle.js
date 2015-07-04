@@ -1,6 +1,6 @@
 (function(PB){
 
-    PB.View = function( place1, place2, winnerId, loserId, attributes ) {
+    PB.view = function( place1, place2, winnerId, loserId, attributes ) {
 
         var winner;
         var loser;
@@ -151,7 +151,7 @@
 
     };
     
-    PB.DoBattle = function () {
+    PB.doBattle = function ( mrWinner, sadLoser ) {
       var attributes = [
             {
                 name : "health",
@@ -191,7 +191,7 @@
         var place1 = new PB.Place( places.boronia,   attrs );
         var place2 = new PB.Place( places.brunswick, attrs );
 
-        PB.View( place2, place1, "winner", "loser", attrs );  
+        PB.view( place2, place1, "winner", "loser", attrs );  
     };
 
 })(PB || {});
