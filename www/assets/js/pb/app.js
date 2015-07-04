@@ -13,7 +13,7 @@ $(document).ready( function () {
     else {
       $("#app-main").html(PB.templates.battleFieldResultTemplate());
       $(".page-header h2").text(result[1] + " vs. " + result[2]);  
-      PB.doBattle(result[1], result[2]);
+      PB.Controller.doBattle(result[1], result[2]);
     }
   }
   else {
@@ -22,7 +22,7 @@ $(document).ready( function () {
       e.originalEvent.preventDefault();		
       $("#app-main").html(PB.templates.battleFieldResultTemplate());
       $(".page-header h2").text("a" + " vs. " + "b");		
-		  PB.doBattle("a", "b");
+		  PB.Controller.doBattle("a", "b");
       window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace( "{good_key}", "a" ).replace( "{bad_key}", "b" );
     });
   }
