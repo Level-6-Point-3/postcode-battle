@@ -1,7 +1,6 @@
 PB.Controller = (function (module) {
 	
 	module.view = function( place1, place2, winnerId, loserId, attributes ) {
-
         var winner;
         var loser;
         if ( place1.isBetterThan( place2 ) ) {
