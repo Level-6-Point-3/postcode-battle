@@ -1,6 +1,6 @@
 (function(PB){
 
-    PB.View = function( place1, place2, winnerId, loserId, attributes ) {
+    PB.view = function( place1, place2, winnerId, loserId, attributes ) {
 
         var winner;
         var loser;
@@ -149,6 +149,49 @@
         this.getBetterLabel = betterLabelers[ json.betterIf ];
         this.getWorseLabel  = worseLabelers[ json.betterIf ];
 
+    };
+    
+    PB.doBattle = function ( mrWinner, sadLoser ) {
+      var attributes = [
+            {
+                name : "health",
+                label : "Health",
+                description: "Number of hospitals",
+                betterIf: "higher"
+            },
+            {
+                name : "house-affordability",
+                label : "House prices",
+                description: "Median house price",
+                betterIf: "lower"
+            }
+        ];
+
+        var places = {
+            boronia : {
+                name : "Boronia",
+                stats : [
+                    { attr: "health", value : 13 },
+                    { attr: "house-affordability", value : 1110440.12 }
+                ]
+            },
+            brunswick : {
+                name : "Brunswick",
+                stats : [
+                    { attr: "health", value : 120 },
+                    { attr: "house-affordability", value : 215044.12 }
+                ]
+            }
+        };
+
+        var attrs = attributes.map( function( item ) {
+            return new PB.Attribute( item );
+        });
+
+        var place1 = new PB.Place( places.boronia,   attrs );
+        var place2 = new PB.Place( places.brunswick, attrs );
+
+        PB.view( place2, place1, "winner", "loser", attrs );  
     };
 
 })(PB || {});
