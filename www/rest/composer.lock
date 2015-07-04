@@ -1,0 +1,68 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "de6b5804516aaa2d77e93543b5981282",
+    "packages": [
+        {
+            "name": "jacwright/restserver",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jacwright/RestServer.git",
+                "reference": "e90f09ae038c40720535f8cf5e6fd539ce9f47c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jacwright/RestServer/zipball/e90f09ae038c40720535f8cf5e6fd539ce9f47c2",
+                "reference": "e90f09ae038c40720535f8cf5e6fd539ce9f47c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Jacwright\\RestServer": "source/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Wright",
+                    "email": "jacwright@gmail.com",
+                    "homepage": "http://jacwright.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "php rest server for very light-weight REST APIs",
+            "homepage": "https://github.com/jacwright/RestServer",
+            "keywords": [
+                "http",
+                "json",
+                "light-weight",
+                "mit",
+                "php",
+                "rest",
+                "rest-server"
+            ],
+            "time": "2015-06-23 15:31:42"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "jacwright/restserver": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
