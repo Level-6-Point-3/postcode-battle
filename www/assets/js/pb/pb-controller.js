@@ -1,26 +1,11 @@
 PB.Controller = (function (module) {
 	
-	module.view = function( place1, place2, winnerId, loserId, attributes ) {
-        var winner;
-        var loser;
-        if ( place1.isBetterThan( place2 ) ) {
-            winner = place1;
-            loser  = place2;
-        } else {
-            // TODO: Draw ("Boronia is EXACTLY AS GOOD/BAD as Brunswick")
-            winner = place2;
-            loser  = place1;
-        }
+	module.view = function( battle, winnerId, loserId ) {
+
+        var winner = battle.winner;
+        var loser  = battle.loser;
 
         console.log( "Winner: " + winner.name + ", Loser: " + loser.name );
-
-        var attributesToShow = [];
-        for ( var i = 0; i < attributes.length; i ++ ) {
-            var attr = attributes[ i ];
-            if ( attr.isBetterThan( winner.getValue( attr.name ), loser.getValue( attr.name ) ) ) {
-                attributesToShow.push( attr );
-            }
-        }
 
         /**
          * Set up the relevant attributes in a list, showing labels to depict whether they are better or worse.
@@ -36,61 +21,69 @@ PB.Controller = (function (module) {
             var attrDiv = div.find( '.panel-body .attributes' );
             attrDiv.html( "" );
 
-            for ( var i = 0; i < attributesToShow.length; i ++ ) {
-                var attrToRender = attributesToShow[ i ];
-                var label = isWinner ? attrToRender.getBetterLabel() : attrToRender.getWorseLabel();
+            for ( var attrId in winner.attributes ) {
+                var value     = winner.attributes[ attrId ];
+                var attribute = battle.getAttribute( attrId );
+
+                if ( attribute == null ) {
+                    throw new Error( "Couldn't find attribute: " + attrId );
+                }
+
+                var label = isWinner ? attribute.positivePhrase : attribute.negativePhrase;
                 var betterOrWorse = isWinner ? "BETTER" : "WORSE";
-                var itemHeading = betterOrWorse + " " + attrToRender.label + "!";
+                var itemHeading = betterOrWorse + " " + attribute.name + "!";
                 attrDiv.append(PB.templates.attributeTemplate(itemHeading, label));
             } // OMG SO l33t!?!!!
 
         };
 
-        constructDiv( winner, winnerId, true );
-        constructDiv( loser , loserId, false );
+        constructDiv( battle.winner, winnerId, true );
+        constructDiv( battle.loser,  loserId, false );
+
     };
 	
-    module.doBattle = function ( mrWinner, sadLoser ) {
-      var attributes = [
-            {
-                name : "health",
-                label : "Health",
-                description: "Number of hospitals",
-                betterIf: "higher"
-            },
-            {
-                name : "house-affordability",
-                label : "House prices",
-                description: "Median house price",
-                betterIf: "lower"
-            }
-        ];
+    module.doBattle = function ( battle ) {
 
-        var places = {
-            boronia : {
+        battle = {
+            loser : {
+                id : '1',
                 name : "Boronia",
-                stats : [
-                    { attr: "health", value : 13 },
-                    { attr: "house-affordability", value : 1110440.12 }
-                ]
+                attributes : {
+                    '1' : 13,
+                    '2' : 1110440.12
+                }
             },
-            brunswick : {
+            winner : {
+                id : '2',
                 name : "Brunswick",
-                stats : [
-                    { attr: "health", value : 120 },
-                    { attr: "house-affordability", value : 215044.12 }
-                ]
-            }
+                attributes : {
+                    '1' : 120,
+                    '2' : 215044.12
+                }
+            },
+            attributes: [
+                {
+                    id             : '1',
+                    name           : 'Health',
+                    description    : 'Number of hospitals',
+                    categoryId     : '',
+                    categoryName   : '',
+                    positivePhrase : 'YAY!',
+                    negativePhrase : 'BOO!'
+                },
+                {
+                    id             : '2',
+                    name           : 'House prices',
+                    description    : 'Median house price',
+                    categoryId     : '',
+                    categoryName   : '',
+                    positivePhrase : 'YAY HOUSES!',
+                    negativePhrase : 'BOO HOUSES!'
+                }
+            ]
         };
 
-        var attrs = attributes.map( function( item ) {
-            return new PB.Attribute( item );
-        });
-
-        var place1 = new PB.Place( places.boronia,   attrs );
-        var place2 = new PB.Place( places.brunswick, attrs );
-
-        module.view( place2, place1, "winner", "loser", attrs );  
+        module.view( new PB.Battle( battle ), "winner", "loser" );
     };
     
 	return module;

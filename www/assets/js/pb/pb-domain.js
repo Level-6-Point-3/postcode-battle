@@ -1,8 +1,13 @@
 (function(PB){
-    
+
     PB.Place = function( json, attributes ) {
 
-        this.name = json.name;
+        this.id         = json.id;
+        this.name       = json.name;
+
+        // If the place has come from a battle result, it will also have a map of attributes (key is attribute id,
+        // value is value).
+        this.attributes = json.attributes;
 
         var allAttributes = attributes;
         var stats = json.stats;
@@ -50,53 +55,77 @@
 
     PB.Attribute = function( json ) {
 
-        var comparators = {
-            higher: function (isThis, betterThanThat) {
-                return isThis > betterThanThat
-            },
-            lower: function (isThis, betterThanThat) {
-                return isThis < betterThanThat
+        this.id             = json.id;
+        this.name           = json.name;
+        this.description    = json.description;
+        this.categoryId     = json.categoryId;
+        this.categoryName   = json.categoryName;
+        this.positivePhrase = json.positivePhrase;
+        this.negativePhrase = json.negativePhrase;
+
+    };
+
+    PB.Battle = function( json ) {
+
+        this.winner     = new PB.Place( json.winner     );
+        this.loser      = new PB.Place( json.loser      );
+        this.attributes = json.attributes.map(function( item ) {
+            return new PB.Attribute( item );
+        });
+
+        this.getAttribute = function( id ) {
+            for ( var i = 0; i < this.attributes.length; i ++ ) {
+                if ( this.attributes[ i ].id == id ) {
+                    return this.attributes[ i ];
+                }
             }
+            return null;
         };
 
-        var betterLabelers = {
-            higher: function() {
-                return "SO MUCH MOAR!!!";
+    };
+    
+    PB.doBattle = function ( battle ) {
+
+        battle = {
+            loser : {
+                id : '1',
+                name : "Boronia",
+                attributes : {
+                    '1' : 13,
+                    '2' : 1110440.12
+                }
             },
-            lower: function() {
-                return "MUCH LESS!";
-            }
+            winner : {
+                id : '2',
+                name : "Brunswick",
+                attributes : {
+                    '1' : 120,
+                    '2' : 215044.12
+                }
+            },
+            attributes: [
+                {
+                    id             : '1',
+                    name           : 'Health',
+                    description    : 'Number of hospitals',
+                    categoryId     : '',
+                    categoryName   : '',
+                    positivePhrase : 'YAY!',
+                    negativePhrase : 'BOO!'
+                },
+                {
+                    id             : '2',
+                    name           : 'House prices',
+                    description    : 'Median house price',
+                    categoryId     : '',
+                    categoryName   : '',
+                    positivePhrase : 'YAY HOUSES!',
+                    negativePhrase : 'BOO HOUSES!'
+                }
+            ]
         };
 
-        var worseLabelers = {
-            higher: function() {
-                return "Oh, not enough for you?";
-            },
-            lower: function() {
-                return "Far too much...";
-            }
-        };
-
-        this.name = json.name;
-        this.label = json.label;
-        this.description = json.description;
-
-        if ( !comparators.hasOwnProperty( json.betterIf ) ) {
-            throw new Error( "Couldn't find betterIf comparator: " + json.betterIf );
-        }
-
-        if ( !betterLabelers.hasOwnProperty( json.betterIf ) ) {
-            throw new Error( "Couldn't find betterIf better labeler: " + json.betterIf );
-        }
-
-        if ( !worseLabelers.hasOwnProperty( json.betterIf ) ) {
-            throw new Error( "Couldn't find betterIf worse labeler: " + json.betterIf );
-        }
-
-        this.isBetterThan   = comparators[ json.betterIf ];
-        this.getBetterLabel = betterLabelers[ json.betterIf ];
-        this.getWorseLabel  = worseLabelers[ json.betterIf ];
-
-    };   
+        PB.view( new PB.Battle( battle ), "winner", "loser" );
+    };
 
 })(PB || {});
