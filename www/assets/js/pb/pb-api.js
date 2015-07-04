@@ -32,5 +32,12 @@ PB.api = ( function ( module, $ ) {
     return $.ajax(ajaxOptions);
   };
   
+  module.getBattleByAttendees = function ( winner, loser ) {
+    var ajaxOptions = initAjaxOptions();
+    ajaxOptions.url = "/battle/" + winner + "/" + loser;
+    ajaxOptions.type = "GET";
+    return $.ajax(ajaxOptions);
+  };
+  
   return module;
 })( PB.api || {}, $ );
