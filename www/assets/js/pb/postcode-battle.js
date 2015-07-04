@@ -1,27 +1,11 @@
 (function(PB){
 
-    PB.view = function( place1, place2, winnerId, loserId, attributes ) {
+    PB.view = function( battle, winnerId, loserId ) {
 
-        var winner;
-        var loser;
-        if ( place1.isBetterThan( place2 ) ) {
-            winner = place1;
-            loser  = place2;
-        } else {
-            // TODO: Draw ("Boronia is EXACTLY AS GOOD/BAD as Brunswick")
-            winner = place2;
-            loser  = place1;
-        }
+        var winner = battle.winner;
+        var loser  = battle.loser;
 
         console.log( "Winner: " + winner.name + ", Loser: " + loser.name );
-
-        var attributesToShow = [];
-        for ( var i = 0; i < attributes.length; i ++ ) {
-            var attr = attributes[ i ];
-            if ( attr.isBetterThan( winner.getValue( attr.name ), loser.getValue( attr.name ) ) ) {
-                attributesToShow.push( attr );
-            }
-        }
 
         /**
          * Set up the relevant attributes in a list, showing labels to depict whether they are better or worse.
@@ -37,24 +21,35 @@
             var attrDiv = div.find( '.panel-body .attributes' );
             attrDiv.html( "" );
 
-            for ( var i = 0; i < attributesToShow.length; i ++ ) {
-                var attrToRender = attributesToShow[ i ];
-                var label = isWinner ? attrToRender.getBetterLabel() : attrToRender.getWorseLabel();
+            for ( var attrId in winner.attributes ) {
+                var value     = winner.attributes[ attrId ];
+                var attribute = battle.getAttribute( attrId );
+
+                if ( attribute == null ) {
+                    throw new Error( "Couldn't find attribute: " + attrId );
+                }
+
+                var label = isWinner ? attribute.positivePhrase : attribute.negativePhrase;
                 var betterOrWorse = isWinner ? "BETTER" : "WORSE";
-                var itemHeading = betterOrWorse + " " + attrToRender.label + "!";
+                var itemHeading = betterOrWorse + " " + attribute.name + "!";
                 attrDiv.append(PB.templates.attributeTemplate(itemHeading, label));
             } // OMG SO l33t!?!!!
 
         };
 
-        constructDiv( winner, winnerId, true );
-        constructDiv( loser , loserId, false );
+        constructDiv( battle.winner, winnerId, true );
+        constructDiv( battle.loser,  loserId, false );
 
     };
 
     PB.Place = function( json, attributes ) {
 
-        this.name = json.name;
+        this.id         = json.id;
+        this.name       = json.name;
+
+        // If the place has come from a battle result, it will also have a map of attributes (key is attribute id,
+        // value is value).
+        this.attributes = json.attributes;
 
         var allAttributes = attributes;
         var stats = json.stats;
@@ -102,96 +97,77 @@
 
     PB.Attribute = function( json ) {
 
-        var comparators = {
-            higher: function (isThis, betterThanThat) {
-                return isThis > betterThanThat
-            },
-            lower: function (isThis, betterThanThat) {
-                return isThis < betterThanThat
-            }
-        };
-
-        var betterLabelers = {
-            higher: function() {
-                return "SO MUCH MOAR!!!";
-            },
-            lower: function() {
-                return "MUCH LESS!";
-            }
-        };
-
-        var worseLabelers = {
-            higher: function() {
-                return "Oh, not enough for you?";
-            },
-            lower: function() {
-                return "Far too much...";
-            }
-        };
-
-        this.name = json.name;
-        this.label = json.label;
-        this.description = json.description;
-
-        if ( !comparators.hasOwnProperty( json.betterIf ) ) {
-            throw new Error( "Couldn't find betterIf comparator: " + json.betterIf );
-        }
-
-        if ( !betterLabelers.hasOwnProperty( json.betterIf ) ) {
-            throw new Error( "Couldn't find betterIf better labeler: " + json.betterIf );
-        }
-
-        if ( !worseLabelers.hasOwnProperty( json.betterIf ) ) {
-            throw new Error( "Couldn't find betterIf worse labeler: " + json.betterIf );
-        }
-
-        this.isBetterThan   = comparators[ json.betterIf ];
-        this.getBetterLabel = betterLabelers[ json.betterIf ];
-        this.getWorseLabel  = worseLabelers[ json.betterIf ];
+        this.id             = json.id;
+        this.name           = json.name;
+        this.description    = json.description;
+        this.categoryId     = json.categoryId;
+        this.categoryName   = json.categoryName;
+        this.positivePhrase = json.positivePhrase;
+        this.negativePhrase = json.negativePhrase;
 
     };
-    
-    PB.doBattle = function ( mrWinner, sadLoser ) {
-      var attributes = [
-            {
-                name : "health",
-                label : "Health",
-                description: "Number of hospitals",
-                betterIf: "higher"
-            },
-            {
-                name : "house-affordability",
-                label : "House prices",
-                description: "Median house price",
-                betterIf: "lower"
-            }
-        ];
 
-        var places = {
-            boronia : {
-                name : "Boronia",
-                stats : [
-                    { attr: "health", value : 13 },
-                    { attr: "house-affordability", value : 1110440.12 }
-                ]
-            },
-            brunswick : {
-                name : "Brunswick",
-                stats : [
-                    { attr: "health", value : 120 },
-                    { attr: "house-affordability", value : 215044.12 }
-                ]
-            }
-        };
+    PB.Battle = function( json ) {
 
-        var attrs = attributes.map( function( item ) {
+        this.winner     = new PB.Place( json.winner     );
+        this.loser      = new PB.Place( json.loser      );
+        this.attributes = json.attributes.map(function( item ) {
             return new PB.Attribute( item );
         });
 
-        var place1 = new PB.Place( places.boronia,   attrs );
-        var place2 = new PB.Place( places.brunswick, attrs );
+        this.getAttribute = function( id ) {
+            for ( var i = 0; i < this.attributes.length; i ++ ) {
+                if ( this.attributes[ i ].id == id ) {
+                    return this.attributes[ i ];
+                }
+            }
+            return null;
+        }
 
-        PB.view( place2, place1, "winner", "loser", attrs );  
+    };
+    
+    PB.doBattle = function ( battle ) {
+
+        battle = {
+            loser : {
+                id : '1',
+                name : "Boronia",
+                attributes : {
+                    '1' : 13,
+                    '2' : 1110440.12
+                }
+            },
+            winner : {
+                id : '2',
+                name : "Brunswick",
+                attributes : {
+                    '1' : 120,
+                    '2' : 215044.12
+                }
+            },
+            attributes: [
+                {
+                    id             : '1',
+                    name           : 'Health',
+                    description    : 'Number of hospitals',
+                    categoryId     : '',
+                    categoryName   : '',
+                    positivePhrase : 'YAY!',
+                    negativePhrase : 'BOO!'
+                },
+                {
+                    id             : '2',
+                    name           : 'House prices',
+                    description    : 'Median house price',
+                    categoryId     : '',
+                    categoryName   : '',
+                    positivePhrase : 'YAY HOUSES!',
+                    negativePhrase : 'BOO HOUSES!'
+                }
+            ]
+        };
+
+        PB.view( new PB.Battle( battle ), "winner", "loser" );
     };
 
 })(PB || {});
