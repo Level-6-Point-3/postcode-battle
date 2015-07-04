@@ -1,5 +1,3 @@
-//var PB = PB || {};
-
 PB.templates = ( function ( module, Handlebars, $ ){
 	module.attributeTemplate = function( itemHeading, attributeLabel ) {
 		var source = $("#attribute-template").html();

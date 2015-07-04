@@ -1,5 +1,3 @@
-//var PB = PB || {};
-
 (function(PB){
 
     PB.View = function( place1, place2, winnerId, loserId, attributes ) {
