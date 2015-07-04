@@ -1,0 +1,13 @@
+AttributeID,AttributeName,AttributeDescription,CategoryID,CategoryName,PositivePhrase,NegativePhrase,Comparator,Denominator,DenominatorRationale,DataSourceLink,DataSourceRationale,DataSourceDate
+1,Number of Schools,Sum of all Schools (primary etc) and universities,1,Education,Smart as Paint!,Maybe go into politics?,,,,https://www.data.vic.gov.au/data/dataset/2011-local-government-area-profile,Vic Data,2011
+11,Number of Kindergardens,Sum of all kindergardens,1,Education,,,,,,https://www.data.vic.gov.au/data/dataset/2011-local-government-area-profile,Vic Data,2011
+2,Number of Hospitals/GPs,,2,Health,Squiky healthy!,Bit pale around the gills..,,,,https://www.data.vic.gov.au/data/dataset/2011-local-government-area-profile,Vic Data,2011
+,Water Quality,Water Quality,2,Health,,,,,,,,
+4,Crime Rate,Total offences per LGA,3,Safety,,Smells dodgy up in here...,,,,https://www.data.vic.gov.au/data/dataset/crime-statistics-agency-data-tables-recorded-offences/resource/285c4025-bc55-4ef5-91a7-5bfb793328bc,,2014
+7,Crash Rate,Total fatal and injury car crashes last five years,3,Safety,,,,,,https://www.data.vic.gov.au/data/dataset/crashes-last-five-years,,2009-2014
+10,Land Area,LGA Area in ha,4,Environment,,,,,,http://stat.abs.gov.au/,,
+,,,4,Environment,,,,,,,,
+,,,5,Transport,,,,,,,,
+3,Estimated Population,Estimated Population,6,Population,,,,,,http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/3218.02013-14?OpenDocument,,2014
+8,Median house price,Victoria's annual median property prices,7,Housing,,,,,,https://www.data.vic.gov.au/data/dataset/2011-local-government-area-profile,Vic Data,2011
+9,nrbusinesses,total number of businesses ,8,Economy,,,,,,,,
