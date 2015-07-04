@@ -1,6 +1,6 @@
-PB = {};
+//var PB = PB || {};
 
-(function(){
+(function(PB){
 
     PB.View = function( place1, place2, winnerId, loserId, attributes ) {
 
@@ -43,12 +43,8 @@ PB = {};
                 var attrToRender = attributesToShow[ i ];
                 var label = isWinner ? attrToRender.getBetterLabel() : attrToRender.getWorseLabel();
                 var betterOrWorse = isWinner ? "BETTER" : "WORSE";
-                attrDiv.append(
-                    "<div class='list-group-item health'>" +
-                        "<div class='list-group-item-heading'>" + betterOrWorse + " " + attrToRender.label + "!</div>" +
-                        "<div class='sub small'>" + label + "</div>" +
-                    "</div>"
-                );
+                var itemHeading = betterOrWorse + " " + attrToRender.label + "!";
+                attrDiv.append(PB.templates.attributeTemplate(itemHeading, label));
             } // OMG SO l33t!?!!!
 
         };
@@ -157,4 +153,4 @@ PB = {};
 
     };
 
-})();
+})(PB || {});
