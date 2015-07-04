@@ -1,8 +1,9 @@
-window.PB = PB || {};
+PB = {};
 
 (function(){
 
-    PB.View = function( place1, place2, winnerId, loserId ) {
+    PB.View = function( place1, place2, winnerId, loserId, attributes ) {
+
         var winner;
         var loser;
         if ( place1.isBetterThan( place2 ) ) {
@@ -14,54 +15,145 @@ window.PB = PB || {};
             loser  = place1;
         }
 
-        var constructDiv = function( place, domId ) {
+        console.log( "Winner: " + winner.name + ", Loser: " + loser.name );
 
-            var div = $( domId );
-            div.find( '.panel-heading' ).html( place.name );
+        var attributesToShow = [];
+        for ( var i = 0; i < attributes.length; i ++ ) {
+            var attr = attributes[ i ];
+            if ( attr.isBetterThan( winner.getValue( attr.name ), loser.getValue( attr.name ) ) ) {
+                attributesToShow.push( attr );
+            }
+        }
+
+        /**
+         * Set up the relevant attributes in a list, showing labels to depict whether they are better or worse.
+         * @param place
+         * @param domId
+         * @param isWinner
+         */
+        var constructDiv = function( place, domId, isWinner ) {
+
+            var div = $( '#' + domId );
+            div.find( '.panel-heading .text').html( place.name );
+
+            var attrDiv = div.find( '.panel-body .attributes' );
+            attrDiv.html( "" );
+
+            for ( var i = 0; i < attributesToShow.length; i ++ ) {
+                var attrToRender = attributesToShow[ i ];
+                var label = isWinner ? attrToRender.getBetterLabel() : attrToRender.getWorseLabel();
+                var betterOrWorse = isWinner ? "BETTER" : "WORSE";
+                attrDiv.append(
+                    "<div class='list-group-item health'>" +
+                        "<div class='list-group-item-heading'>" + betterOrWorse + " " + attrToRender.label + "!</div>" +
+                        "<div class='sub small'>" + label + "</div>" +
+                    "</div>"
+                );
+            } // OMG SO l33t!?!!!
 
         };
 
-        constructDiv( winner, winnerId );
-        constructDiv( loser , loserId  );
+        constructDiv( winner, winnerId, true );
+        constructDiv( loser , loserId, false );
 
     };
 
-    PB.Place = function( json ) {
+    PB.Place = function( json, attributes ) {
 
         this.name = json.name;
-        this.stats = [];
 
-        this.isBetterThan = function( place ) {
+        var allAttributes = attributes;
+        var stats = json.stats;
 
-            var thisScore = 0;
-
-            for ( var i = 0; i < this.stats.length; i ++ ) {
-                var stat = place.stats[ j ];
-                for ( var j = 0; j < place.stats.length; j ++ ) {
-                    var otherStat = place.stats[ j ];
-                    if ( stat.name == otherStat.name ) {
-                        if ( stat.value > otherStat.value ) {
-                            thisScore ++;
-                        } else if ( stat.value < otherStat.value ) {
-                            thisScore --;
-                        }
-                        break;
-                    }
+        this.getAttribute = function( attrName ) {
+            for ( var i = 0; i < allAttributes.length; i ++ ) {
+                if ( allAttributes[ i ].name == attrName ) {
+                    return allAttributes[ i ];
                 }
-
             }
 
-            return thisScore > 0;
+            throw new Error( "Couldn't find attribute: " + attrName );
+        };
 
-        }
+        this.isBetterThan = function( that ) {
+
+            var totalThisScore = 0;
+
+            for ( var i = 0; i < allAttributes.length; i ++ ) {
+                var attr = allAttributes[ i ];
+                var thisValue = this.getValue( attr.name );
+                var thatValue = that.getValue( attr.name );
+                if ( attr.isBetterThan( thisValue, thatValue ) ) {
+                    console.log( attr.label + ": " + this.name + " (" + thisValue + ") is better than " + that.name + " (" + thatValue + ")" );
+                    totalThisScore ++;
+                } else if ( attr.isBetterThan( thatValue, thisValue ) ) {
+                    console.log( attr.label + ": " + that.name + " (" + thatValue + ") is better than " + this.name + " (" + thisValue + ")" );
+                    totalThisScore --;
+                }
+            }
+
+            return totalThisScore > 0;
+
+        };
+
+        this.getValue = function( attributeName ) {
+            for ( var i = 0; i < stats.length; i ++ ) {
+                if ( stats[ i ].attr == attributeName ) {
+                    return stats[ i ].value;
+                }
+            }
+        };
 
     };
 
     PB.Attribute = function( json ) {
 
+        var comparators = {
+            higher: function (isThis, betterThanThat) {
+                return isThis > betterThanThat
+            },
+            lower: function (isThis, betterThanThat) {
+                return isThis < betterThanThat
+            }
+        };
+
+        var betterLabelers = {
+            higher: function() {
+                return "SO MUCH MOAR!!!";
+            },
+            lower: function() {
+                return "MUCH LESS!";
+            }
+        };
+
+        var worseLabelers = {
+            higher: function() {
+                return "Oh, not enough for you?";
+            },
+            lower: function() {
+                return "Far too much...";
+            }
+        };
+
         this.name = json.name;
+        this.label = json.label;
         this.description = json.description;
-        this.value = 0;
+
+        if ( !comparators.hasOwnProperty( json.betterIf ) ) {
+            throw new Error( "Couldn't find betterIf comparator: " + json.betterIf );
+        }
+
+        if ( !betterLabelers.hasOwnProperty( json.betterIf ) ) {
+            throw new Error( "Couldn't find betterIf better labeler: " + json.betterIf );
+        }
+
+        if ( !worseLabelers.hasOwnProperty( json.betterIf ) ) {
+            throw new Error( "Couldn't find betterIf worse labeler: " + json.betterIf );
+        }
+
+        this.isBetterThan   = comparators[ json.betterIf ];
+        this.getBetterLabel = betterLabelers[ json.betterIf ];
+        this.getWorseLabel  = worseLabelers[ json.betterIf ];
 
     };
 

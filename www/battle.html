@@ -2,9 +2,10 @@
 
 <head>
     <title>Postcode Battle</title>
+    <script src="lib/jquery-2.1.1.min.js"></script>
     <script src="postcode-battle.js"></script>
     <link href="lib/bootstrap.min.css" rel="stylesheet" /><!--
-    <script src="lib/jquery-2.1.1.min.js"></script>
+
     <script src="lib/bootstrap.min.js"></script>-->
 </head>
 
@@ -17,39 +18,23 @@
     </div>
     <div class="row">
         <div class="col-lg-9">
-            <div class="panel panel-success">
+            <div id="winner" class="panel panel-success winner">
                 <div class="panel-heading">
-                    <h3>Boronia, Yeah!</h3>
+                    <h3 class="text"></h3>
                 </div>
                 <div class="panel-body">
-                    <div class="list-group">
-                        <div class="list-group-item health">
-                            <div class="list-group-item-heading">MORE HEALTH!</div>
-                            <div class="sub small">13 more hospitals! SO MANY HOSPITALS!</div>
-                        </div>
-                        <div class="list-group-item housing-prices">
-                            <div class="list-group-item-heading">CHEAPER HOUSES!</div>
-                            <div class="sub small">Thats $321,450.12 right back in your pocket!</div>
-                        </div>
+                    <div class="list-group attributes">
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-3">
-            <div class="panel panel-danger">
+            <div id="loser" class="panel panel-danger">
                 <div class="panel-heading">
-                    <h3><strike>Brunswick, Boo!</strike></h3>
+                    <h3><strike class="text"></strike></h3>
                 </div>
                 <div class="panel-body">
-                    <div class="list-group">
-                        <div class="list-item health">
-                            <div class="list-group-item-heading">MORE HEALTH!</div>
-                            <div class="sub small">13 more hospitals!</div>
-                        </div>
-                        <div class="list-group-item-heading housing-prices">
-                            <div class="list-group-item-heading">CHEAPER HOUSES!</div>
-                            <div class="sub small">Tjats $321,451 back in your pocket!</div>
-                        </div>
+                    <div class="list-group attributes">
                     </div>
                 </div>
             </div>
@@ -59,35 +44,50 @@
 
 <script type="text/javascript">
 
-    setTimeout(function() {
+    (function() {
 
         var attributes = [
-            { name : "Health", description: "Number of hospitals" },
-            { name : "House prices", description: "Median house price" },
+            {
+                name : "health",
+                label : "Health",
+                description: "Number of hospitals",
+                betterIf: "higher"
+            },
+            {
+                name : "house-affordability",
+                label : "House prices",
+                description: "Median house price",
+                betterIf: "lower"
+            }
         ];
 
         var places = {
             boronia : {
                 name : "Boronia",
-                stats : {
-                    "Health" : 10,
-                    "House prices" : 111044.12
-                }
-            }, brunswick : {
+                stats : [
+                    { attr: "health", value : 13 },
+                    { attr: "house-affordability", value : 1110440.12 }
+                ]
+            },
+            brunswick : {
                 name : "Brunswick",
-                stats : {
-                    "Health" : 12,
-                    "House prices" : 215044.12
-                }
+                stats : [
+                    { attr: "health", value : 120 },
+                    { attr: "house-affordability", value : 215044.12 }
+                ]
             }
         };
 
-        var place1 = new PB.Place( places.boronia );
-        var place2 = new PB.Place( places.brunswick );
+        var attrs = attributes.map( function( item ) {
+            return new PB.Attribute( item );
+        });
 
-        PB.View( place1, place2, "winner", "loser" );
+        var place1 = new PB.Place( places.boronia,   attrs );
+        var place2 = new PB.Place( places.brunswick, attrs );
 
-    }, 1000);
+        PB.View( place2, place1, "winner", "loser", attrs );
+
+    })();
 
 </script>
 
