@@ -1,86 +1,106 @@
 <html>
-	<head>
-		<title>Postcode Battle</title>
-	    <!-- Libraries -->
-    	<script src="assets/js/lib/jquery-2.1.1.min.js"></script>
-    	<script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+<head>
+    <title>Postcode Battle</title>
+    <!-- Libraries -->
+    <script src="assets/js/lib/jquery-2.1.1.min.js"></script>
+    <script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+    <script src="assets/js/lib/portfoliojs/js/portfolio.pack.min.js"></script>
+
+    <!-- PB Libraries -->
+
+    <script src="assets/js/pb/init.js"></script>
+    <script src="assets/js/pb/templates.js"></script>
+
+    <script src="assets/js/pb/postcode-battle.js"></script>
+    <script src="assets/js/pb/app.js"></script>
+    <link href="assets/css/postcode-battle.css" rel="stylesheet"/>
+    <link href="assets/js/lib/bootstrap.min.css" rel="stylesheet"/>
+
     
-    	<!-- PB Libraries -->
-    
-    	<script src="assets/js/pb/init.js"></script>
-    	<script src="assets/js/pb/templates.js"></script>  
-    	<script src="assets/js/pb/pb-api.js"></script>
-	
-    	<script src="assets/js/pb/postcode-battle.js"></script>
-		<script src="assets/js/pb/app.js"></script>
-    	<link href="assets/css/postcode-battle.css" rel="stylesheet" />
-	    <link href="assets/js/lib/bootstrap.min.css" rel="stylesheet" />	
-		
-		<!-- handlebars templates start here. -->
-    	<script id="attribute-template" type="text/x-handlebars-template">
-        	<div class="list-group-item health">
-            	<div class="list-group-item-heading">{{itemHeading}}</div>
-            	<div class="sub small">{{label}}</div>
-        	</div>
-    	</script>
-		
-		<script id="battle-field-start-template" type="text/x-handlebars-template">
-			<div class="battle-field">
-				<div class="battle-ground col-md-11 col-lg-10">
-					<div class="form-group col-md-5 col-lg-5">
-						<img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
-						<label for="winning-suburb">Choose a suburb you want it to win...</label>
-						<input type="text" class="form-control" id="winning-suburb">
-					</div>
-					<div class="col-md-2 col-lg-2">
-						<h3>VS.</h3>
-					</div>
-					<div class="form-group col-md-5 col-lg-5">
-						<img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
-						<label for="losing-suburb">Choose a suburb you want it to lose...</label>
-						<input type="text" class="form-control" id="losing-suburb">
-					</div>
-				</div>
-				<div class="btn-controls  col-md-11 col-lg-10">
-					<button type="submit" class="btn btn-default" id="do-battle">Do Battle!</button>	
-				</div>
-			</div>
-		</script>
-		<script id="battle-field-result-template" type="text/x-handlebars-template">
-			<div class="row">
-        		<div class="col-lg-9">
-            		<div id="winner" class="panel panel-success winner">
-                		<div class="panel-heading">
-                    		<h3 class="text"></h3>
-                		</div>
-                		<div class="panel-body">
-                    		<div class="list-group attributes">
-                    		</div>
-                		</div>
-            		</div>
-        		</div>
-        		<div class="col-lg-3">
-            		<div id="loser" class="panel panel-danger">
-                		<div class="panel-heading">
-                    		<h3><strike class="text"></strike></h3>
-                		</div>
-                		<div class="panel-body">
-                    		<div class="list-group attributes">
-                    		</div>
-                		</div>
-            		</div>
-        		</div>
-    		</div>
-		</script>
-	</head>
-	<body>
-		<div class="container">
-			<div class="page-header col-lg-12">
-				<h1>Postcode Battle! Suburbs do Battle!</h1>
-				<h2></h2>
-			</div>
-			<div id="app-main"></div>
-			<div class="footer"></div>
-		</div>
-	</body>
+
+    <!-- handlebars templates start here. -->
+    <script id="attribute-template" type="text/x-handlebars-template">
+        <div class="list-group-item health">
+            <div class="list-group-item-heading">{{itemHeading}}</div>
+            <div class="sub small">{{label}}</div>
+        </div>
+    </script>
+
+    <script id="battle-field-start-template" type="text/x-handlebars-template">
+        <div class="slides-show">
+            <div id="gallery">
+                <img src="assets/imgs/Ballarat.jpg" />
+                <img src="assets/imgs/Benalla.jpg" />
+                <img src="assets/imgs/Boroondara.jpg" />
+                <img src="assets/imgs/Brimbank.jpg" />
+                <img src="assets/imgs/Buloke.jpg" />
+                <img src="assets/imgs/Darebin.jpg" />
+                <img src="assets/imgs/Cardinia.jpg" />
+                <img src="assets/imgs/Campaspe.jpg" />
+            </div>
+        </div>
+        <div class="battle-field">
+            <div class="battle-ground col-md-11 col-lg-10">
+                <div class="form-group col-md-5 col-lg-5">
+                    <img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
+                    <label for="winning-suburb">Choose a suburb you want it to win...</label>
+                    <input type="text" class="form-control" id="winning-suburb">
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <h3>VS.</h3>
+                </div>
+                <div class="form-group col-md-5 col-lg-5">
+                    <img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
+                    <label for="losing-suburb">Choose a suburb you want it to lose...</label>
+                    <input type="text" class="form-control" id="losing-suburb">
+                </div>
+            </div>
+            <div class="btn-controls  col-md-11 col-lg-10">
+                <button type="submit" class="btn btn-default" id="do-battle">Do Battle!</button>
+            </div>
+        </div>
+    </script>
+    <script id="battle-field-result-template" type="text/x-handlebars-template">
+        <div class="row">
+            <div class="col-lg-9">
+                <div id="winner" class="panel panel-success winner">
+                    <div class="panel-heading">
+                        <h3 class="text"></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group attributes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div id="loser" class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h3><strike class="text"></strike></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group attributes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="page-header col-lg-12">
+            <h1>Postcode Battle! Suburbs do Battle!</h1>
+            <h2></h2>
+        </div>
+    </div>
+    <div class="row">
+        <div id="app-main"></div>
+    </div>
+    <div class="row">
+        <div class="footer"></div>
+    </div>
+</div>
+</body>
 </html>
