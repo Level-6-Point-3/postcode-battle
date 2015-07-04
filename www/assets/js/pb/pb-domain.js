@@ -1,47 +1,5 @@
 (function(PB){
 
-    PB.view = function( battle, winnerId, loserId ) {
-
-        var winner = battle.winner;
-        var loser  = battle.loser;
-
-        console.log( "Winner: " + winner.name + ", Loser: " + loser.name );
-
-        /**
-         * Set up the relevant attributes in a list, showing labels to depict whether they are better or worse.
-         * @param place
-         * @param domId
-         * @param isWinner
-         */
-        var constructDiv = function( place, domId, isWinner ) {
-
-            var div = $( '#' + domId );
-            div.find( '.panel-heading .text').html( place.name );
-
-            var attrDiv = div.find( '.panel-body .attributes' );
-            attrDiv.html( "" );
-
-            for ( var attrId in winner.attributes ) {
-                var value     = winner.attributes[ attrId ];
-                var attribute = battle.getAttribute( attrId );
-
-                if ( attribute == null ) {
-                    throw new Error( "Couldn't find attribute: " + attrId );
-                }
-
-                var label = isWinner ? attribute.positivePhrase : attribute.negativePhrase;
-                var betterOrWorse = isWinner ? "BETTER" : "WORSE";
-                var itemHeading = betterOrWorse + " " + attribute.name + "!";
-                attrDiv.append(PB.templates.attributeTemplate(itemHeading, label));
-            } // OMG SO l33t!?!!!
-
-        };
-
-        constructDiv( battle.winner, winnerId, true );
-        constructDiv( battle.loser,  loserId, false );
-
-    };
-
     PB.Place = function( json, attributes ) {
 
         this.id         = json.id;
@@ -122,7 +80,7 @@
                 }
             }
             return null;
-        }
+        };
 
     };
     
