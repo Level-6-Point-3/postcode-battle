@@ -29,9 +29,10 @@ abstract class DataAccess {
 		return $this->pdo;
 	}
 
-	protected final function select( $query ) {
-		$result = $this->pdo->query( $query );
-		return $result->fetchAll( PDO::FETCH_ASSOC );
+	protected final function select( $query, $params = array() ) {
+		$statement = $this->pdo->prepare( $query );
+		$statement->execute( $params );
+		return $statement->fetchAll( PDO::FETCH_ASSOC );
 	}
 
 }
@@ -40,36 +41,29 @@ class LgaController extends DataAccess {
 
 	/**
 	 * @url GET /lga/list
-	 * @return array
+	 * @return array[]
 	 */
 	public function listAll() {
-		$result = $this->select( "SELECT * FROM lga;" );
-		return array_map(
-			function( $lga ) {
-				return array(
-					'id' => $lga[ 'id' ],
-					'name' => $lga[ 'name' ]
-				);
-			}, $result
-		);
+		return $this->select( "SELECT id, name FROM lga;" );
 	}
 
 	/**
 	 * @url GET /lga/$id
 	 * @param int $id
-	 * @return array
+	 * @return array|null
 	 */
 	public function get($id) {
-		return array( 'id' => 1, 'name' => "Boronia" );
+		$result = $this->select( "SELECT id, name FROM lga WHERE id = :id", array( ':id' => (int)$id ) );
+		return $result ? array_pop( $result ) : null;
 	}
 
 	/**
 	 * @url GET /lga/search/$query
 	 * @param string $query
-	 * @return array
+	 * @return array[]
 	 */
 	public function search($query) {
-		return array( 'id' => 1, 'name' => "Brunswick" );
+		return $this->select( "SELECT id, name FROM lga WHERE name LIKE :query;", array( ':query' => "%$query%" ) );
 	}
 
 }
@@ -81,36 +75,25 @@ class AttributeController extends DataAccess {
 	 * @return array
 	 */
 	public function listAll() {
-		return array(
-			array(
-				'id' => 1,
-				'name' => "Housing affordability",
-				'betterIf' => 'lower',
-				'positiveMessage' => "You can actually afford houses here",
-				'negativeMessage' => "You'll never buy here."
-			),
-			array(
-				'id' => 1,
-				'name' => "Hosing value",
-				'betterIf' => 'higher',
-				'positiveMessage' => "Your house is worth heaps here!",
-				'negativeMessage' => "Good luck selling in this market :("
-			),
-			array(
-				'id' => 1,
-				'name' => "Crime",
-				'betterIf' => 'lower',
-				'positiveMessage' => "Can't put a price on your safety.",
-				'negativeMessage' => "Feel like getting robbed?"
-			),
-			array(
-				'id' => 1,
-				'name' => "Health Services",
-				'betterIf' => 'higher',
-				'positiveMessage' => "Not far to a hospital from this place.",
-				'negativeMessage' => "What's wrong with catching a train and three buses to get to the hospital at midnight?"
-			),
-		);
+		return $this->select( <<<SQL
+SELECT
+	AttributeID,
+	AttributeName,
+	AttributeDescription,
+	CategoryID,
+	CategoryName,
+	PositivePhrase,
+	NegativePhrase,
+	Comparator,
+	Denominator,
+	DenominatorRationale,
+	DataSourceLink,
+	DataSourceRationale,
+	DataSourceDate
+FROM
+	attributemetadata
+SQL
+);
 	}
 
 }
