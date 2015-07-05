@@ -73,6 +73,8 @@
     PB.Authority = function ( json ) {
       this.id   = json.id;
       this.name = json.name;  
+      this.imageURL = json.imageURL;
+      this.imageSource = json.imageSource;
     };
 
     PB.Battle = function( json ) {
@@ -95,45 +97,6 @@
     };
     
     PB.doBattle = function ( battle ) {
-
-        /*battle = new PB.Battle( {
-            loser : {
-                id : '1',
-                name : "Boronia",
-                attributes : {
-                    '1' : 13,
-                    '2' : 1110440.12
-                }
-            },
-            winner : {
-                id : '2',
-                name : "Brunswick",
-                attributes : {
-                    '1' : 120,
-                    '2' : 215044.12
-                }
-            },
-            attributes: [
-                {
-                    id             : '1',
-                    name           : 'Health',
-                    description    : 'Number of hospitals',
-                    categoryId     : '',
-                    categoryName   : '',
-                    positivePhrase : 'YAY!',
-                    negativePhrase : 'BOO!'
-                },
-                {
-                    id             : '2',
-                    name           : 'House prices',
-                    description    : 'Median house price',
-                    categoryId     : '',
-                    categoryName   : '',
-                    positivePhrase : 'YAY HOUSES!',
-                    negativePhrase : 'BOO HOUSES!'
-                }
-            ]
-        } );*/
 
         PB.view( battle, "winner", "loser" );
     };

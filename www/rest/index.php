@@ -66,7 +66,7 @@ class LgaController extends DataAccess {
 	 * @return array[]
 	 */
 	public function listAll() {
-		return $this->select( "SELECT id, name FROM lga;" );
+		return $this->select( "SELECT id, name, imageURL, imageSource FROM lga;" );
 	}
 
 	/**
@@ -75,7 +75,7 @@ class LgaController extends DataAccess {
 	 * @return array|null
 	 */
 	public function get($id) {
-		$result = $this->select( "SELECT id, name FROM lga WHERE id = :id", array( ':id' => (int)$id ) );
+		$result = $this->select( "SELECT id, name, imageURL, imageSource FROM lga WHERE id = :id", array( ':id' => (int)$id ) );
 		return $result ? array_pop( $result ) : null;
 	}
 
@@ -85,7 +85,7 @@ class LgaController extends DataAccess {
 	 * @return array[]
 	 */
 	public function search($query) {
-		return $this->select( "SELECT id, name FROM lga WHERE name LIKE :query;", array( ':query' => "%$query%" ) );
+		return $this->select( "SELECT id, name, imageURL, imageSource FROM lga WHERE name LIKE :query;", array( ':query' => "%$query%" ) );
 	}
 
 }
