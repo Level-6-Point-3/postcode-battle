@@ -5,8 +5,6 @@ PB.Controller = (function (module) {
         var winner = battle.winner;
         var loser  = battle.loser;
 
-        console.log( "Winner: " + winner.name + ", Loser: " + loser.name );
-
         /**
          * Set up the relevant attributes in a list, showing labels to depict whether they are better or worse.
          * @param place
@@ -30,9 +28,7 @@ PB.Controller = (function (module) {
                 }
 
                 var label = isWinner ? attribute.positivePhrase : attribute.negativePhrase;
-                var betterOrWorse = isWinner ? "BETTER" : "WORSE";
-                var itemHeading = betterOrWorse + " " + attribute.name + "!";
-                attrDiv.append(PB.templates.attributeTemplate(itemHeading, label));
+                attrDiv.append( PB.templates.attributeTemplate( attribute.name , label ) );
             }
         };
 
@@ -43,7 +39,7 @@ PB.Controller = (function (module) {
 	
     module.doBattle = function ( battle ) {
 
-        battle = {
+        /*battle = new PB.Battle( {
             loser : {
                 id : '1',
                 name : "Boronia",
@@ -80,9 +76,9 @@ PB.Controller = (function (module) {
                     negativePhrase : 'BOO HOUSES!'
                 }
             ]
-        };
+        } );*/
 
-        module.view( new PB.Battle( battle ), "winner", "loser" );
+        module.view( battle, "winner", "loser" );
     };
     
 	return module;

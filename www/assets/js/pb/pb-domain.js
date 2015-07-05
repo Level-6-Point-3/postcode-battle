@@ -96,7 +96,7 @@
     
     PB.doBattle = function ( battle ) {
 
-        battle = {
+        /*battle = new PB.Battle( {
             loser : {
                 id : '1',
                 name : "Boronia",
@@ -133,9 +133,9 @@
                     negativePhrase : 'BOO HOUSES!'
                 }
             ]
-        };
+        } );*/
 
-        PB.view( new PB.Battle( battle ), "winner", "loser" );
+        PB.view( battle, "winner", "loser" );
     };
 
 })(PB || {});

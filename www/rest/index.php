@@ -1,5 +1,25 @@
 <?php
 
+function handleHeaders() {
+
+	$isOptionRequest = $_SERVER[ 'REQUEST_METHOD' ] == "OPTIONS";
+	if ( $isOptionRequest ) {
+		header( "HTTP/1.1 200 OK" );
+	}
+
+	// http://stackoverflow.com/a/12320736
+	header( 'Access-Control-Allow-Origin: *' );
+	header( 'Access-Control-Allow-Methods: GET' );
+	header( 'Access-Control-Allow-Headers: Content-Type' );
+
+	if ( $isOptionRequest ) {
+		exit;
+	}
+
+}
+
+handleHeaders();
+
 use Jacwright\RestServer\RestException;
 use Jacwright\RestServer\RestServer;
 

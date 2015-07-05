@@ -9,9 +9,11 @@ $(document).ready( function () {
       window.location="index.html";
     }
     else {
+      PB.api.getBattleByAttendees( result[ 1 ], result[ 2 ]).done( function( result ) {
+          PB.Controller.doBattle( new PB.Battle( result ) );
+      });
       $("#app-main").html(PB.templates.battleFieldResultTemplate());
-      $(".page-header h2").text(result[1] + " vs. " + result[2]);  
-      PB.Controller.doBattle({});
+      $(".page-header h2").text(result[1] + " vs. " + result[2]);
     }
   }
   else {
