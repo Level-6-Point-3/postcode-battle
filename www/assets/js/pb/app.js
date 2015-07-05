@@ -40,9 +40,11 @@ $(document).ready(function () {
         //    //opacityLightbox: '1' // opacity of other images which are not active
         //
         //});
-        var p = $("#gallery").portfolio();
+        var p = $("#gallery").portfolio({
+            height: '70%', // gallery height
+            loop: true
+        });
         p.init();
-
 
         $("#do-battle").click(function (e) {
             e.originalEvent.preventDefault();
