@@ -18,6 +18,13 @@ PB.templates = ( function ( module, Handlebars, $ ){
 		
 		return template();	
 	};
+
+	module.whoAreWeTemplate = function () {
+		var source = $("#who-are-we-template").html();
+		var template = Handlebars.compile( source );
+
+		return template();
+	};
 	
 	return module;
 } )( PB.templates || {}, Handlebars || {}, $ );

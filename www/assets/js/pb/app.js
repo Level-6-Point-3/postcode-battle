@@ -31,6 +31,11 @@ $(document).ready(function () {
         debugger;
     });
 
+    $( '#who-are-we').click( function( event ) {
+        event.preventDefault();
+        $( '#app-main' ).html( PB.templates.whoAreWeTemplate() );
+    });
+
     radio("getLocalAuthorities.done").subscribe(function () {
         // make sure nothing happense prior to loading local authorities
 
