@@ -28,7 +28,7 @@ PB.Controller = (function (module) {
                 }
 
                 var label = isWinner ? attribute.positivePhrase : attribute.negativePhrase;
-                attrDiv.append( PB.templates.attributeTemplate( attribute.name , label ) );
+                attrDiv.append( PB.templates.attributeTemplate( attribute.name , label, isWinner ) );
             }
         };
 

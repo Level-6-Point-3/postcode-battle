@@ -1,8 +1,8 @@
 PB.templates = ( function ( module, Handlebars, $ ){
-	module.attributeTemplate = function( itemHeading, attributeLabel ) {
+	module.attributeTemplate = function( itemHeading, attributeLabel, isWinner ) {
 		var source = $("#attribute-template").html();
 		var template = Handlebars.compile( source );
-		return template( { itemHeading: itemHeading, label: attributeLabel } );
+		return template( { itemHeading: itemHeading, label: attributeLabel, winner: isWinner } );
 	};
 	
 	module.battleFieldStartTemplate = function () {
