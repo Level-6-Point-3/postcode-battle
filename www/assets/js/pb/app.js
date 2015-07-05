@@ -59,9 +59,13 @@ $(document).ready(function () {
                 window.location = "index.html";
             }
             else {
-                $(".page-header h2").text(result[1] + " vs. " + result[2]);
+                var winnerName = result[1].replace( "_", " " );
+                winnerName = winnerName.replace( "%20", " " );
+                var loserName = result[2].replace( "_", " " );
+                loserName = loserName.replace( "%20", " " );
+                $(".page-header h2").text(winnerName + " vs. " + loserName);
 
-                generateBattleResults(result[1], result[2]);
+                generateBattleResults(winnerName, loserName);
             }
         }
         else {
@@ -118,7 +122,9 @@ $(document).ready(function () {
                 $(".page-header h2").text(winnerName + " vs. " + loserName);
 
                 PB.BattleController.getBattle(winnerId, loserId);
-                window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace("{good_key}", winnerName).replace("{bad_key}", loserName);
+                winnerName = winnerName.replace( " ", "_" );
+                loserName = loserName.replace( " ", "_" );
+                window.location.href = "/" + PB.HASH_URL_TEMPLATE.replace("{good_key}", winnerName).replace("{bad_key}", loserName);
             });
         }
 
