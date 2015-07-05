@@ -23,6 +23,7 @@ var generateBattleResults = function (winnerName, loserName) {
 $(document).ready(function () {
 
     radio("getBattle.done").subscribe(function (battleresult) {
+        $("#app-main").html(PB.templates.battleFieldResultTemplate( ));
         PB.Controller.doBattle(battleresult);
     });
 
@@ -47,7 +48,6 @@ $(document).ready(function () {
                 window.location = "index.html";
             }
             else {
-                $("#app-main").html(PB.templates.battleFieldResultTemplate());
                 $(".page-header h2").text(result[1] + " vs. " + result[2]);
 
                 generateBattleResults(result[1], result[2]);
@@ -106,15 +106,14 @@ $(document).ready(function () {
 
                 $(".page-header h2").text(winnerName + " vs. " + loserName);
 
-                $("#app-main").html(PB.templates.battleFieldResultTemplate( ));
-
                 PB.BattleController.getBattle(winnerId, loserId);
                 window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace("{good_key}", winnerName).replace("{bad_key}", loserName);
             });
         }
 
     });
-        PB.LGAController.getLocalAuthorities();
+    
+    PB.LGAController.getLocalAuthorities();
 });
 
 
