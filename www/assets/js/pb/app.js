@@ -101,7 +101,7 @@ $(document).ready(function () {
 
                 $(".page-header h2").text(winnerName + " vs. " + loserName);
 
-                $("#app-main").html(PB.templates.battleFieldResultTemplate());
+                $("#app-main").html(PB.templates.battleFieldResultTemplate( ));
 
                 PB.BattleController.getBattle(winnerId, loserId);
                 window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace("{good_key}", winnerName).replace("{bad_key}", loserName);
