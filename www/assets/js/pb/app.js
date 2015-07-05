@@ -34,11 +34,15 @@ $(document).ready(function () {
 
     $( '#who-are-we').click( function( event ) {
         event.preventDefault();
+        $('.navbar-nav li').removeClass("active");
+        $('#who-are-we').parent().addClass("active");
         $( '#app-main' ).html( PB.templates.whoAreWeTemplate() );
     });
 
     $( '#liveability-index-nav').click( function( event ) {
         event.preventDefault();
+        $('.navbar-nav li').removeClass("active");
+        $('#liveability-index-nav').parent().addClass("active");
         $( '#app-main' ).html( PB.templates.liveabilityIndexTemplate() );
         tableau._createNewVizesAndStartLoading();
     });
