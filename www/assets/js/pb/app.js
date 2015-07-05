@@ -1,11 +1,5 @@
 $(document).ready(function () {
 
-
-
-    var url = window.location.href.toString(),
-        urlArray = url.split("#"),
-        isBattleSpecified = false;
-
     if (window.location.hash !== "") {
         var pattern = /^\#why-is-(.+)-better-than-(.+)$/,
             result = pattern.exec(window.location.hash);
@@ -20,7 +14,11 @@ $(document).ready(function () {
         }
     }
     else {
+        PB.LGAController.getLocalAuthorities();
+        PB.AttributeController.getAttributes();
+
         $("#app-main").html(PB.templates.battleFieldStartTemplate());
+
 
         //
         //var p = $('#gallery').portfolio({
@@ -42,13 +40,17 @@ $(document).ready(function () {
         p.init();
 
 
-
         $("#do-battle").click(function (e) {
             e.originalEvent.preventDefault();
             $("#app-main").html(PB.templates.battleFieldResultTemplate());
             $(".page-header h2").text("a" + " vs. " + "b");
             PB.Controller.doBattle({});
             window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace("{good_key}", "a").replace("{bad_key}", "b");
+        });
+
+        // radio test.
+        radio("getLocalAuthority.done").subscribe(function (data) {
+            debugger;
         });
     }
 });

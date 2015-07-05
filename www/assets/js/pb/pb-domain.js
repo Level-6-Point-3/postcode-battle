@@ -54,21 +54,31 @@
     };
 
     PB.Attribute = function( json ) {
-
-        this.id             = json.id;
-        this.name           = json.name;
-        this.description    = json.description;
-        this.categoryId     = json.categoryId;
-        this.categoryName   = json.categoryName;
-        this.positivePhrase = json.positivePhrase;
-        this.negativePhrase = json.negativePhrase;
-
+        
+        this.id                     = json.attributeId;
+        this.name                   = json.attributeName;
+        this.description            = json.attributeDescription;
+        this.categoryId             = json.categoryId;
+        this.categoryName           = json.categoryName;
+        this.positivePhrase         = json.positivePhrase;
+        this.negativePhrase         = json.negativePhrase;
+        this.dataSourceData         = json.dataSourceDate;
+        this.dataSourceLink         = json.dataSourceLink;
+        this.dataSourceRationale    = json.dataSourceRationale;
+        this.denominatorRationale   = json.denominatorRationale;
+        this.comparator             = json.comparator;
+        this.denominator            = json.denominator;
+    };
+    
+    PB.Authority = function ( json ) {
+      this.id   = json.id;
+      this.name = json.name;  
     };
 
     PB.Battle = function( json ) {
 
-        this.winner     = new PB.Place( json.winner     );
-        this.loser      = new PB.Place( json.loser      );
+        this.winner     = new PB.Place( json.winner );
+        this.loser      = new PB.Place( json.loser );
         this.attributes = json.attributes.map(function( item ) {
             return new PB.Attribute( item );
         });

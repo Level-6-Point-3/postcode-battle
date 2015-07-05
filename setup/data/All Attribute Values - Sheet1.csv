@@ -1,0 +1,1437 @@
+1,20110,Alpine,11
+1,20260,Ararat,13
+1,20570,Ballarat,47
+1,20660,Banyule,44
+1,20740,Bass Coast,12
+1,20830,Baw Baw,38
+1,20910,Bayside,28
+1,21010,Benalla,13
+1,21110,Boroondara,59
+1,21180,Brimbank,59
+1,21270,Buloke,10
+1,21370,Campaspe,26
+1,21450,Cardinia,31
+1,21610,Casey,74
+1,21670,Central Goldfields,8
+1,21750,Colac-Otway,18
+1,21830,Corangamite,14
+1,21890,Darebin,42
+1,22110,East Gippsland,37
+1,22170,Frankston,42
+1,22250,Gannawarra,14
+1,22310,Glen Eira,40
+1,22410,Glenelg,18
+1,22490,Golden Plains,12
+1,22620,Greater Bendigo,51
+1,22670,Greater Dandenong,42
+1,22750,Greater Geelong,82
+1,22830,Greater Shepparton,43
+1,22910,Hepburn,15
+1,22980,Hindmarsh,9
+1,23110,Hobsons Bay,28
+1,23190,Horsham,9
+1,23270,Hume,56
+1,23350,Indigo,18
+1,23430,Kingston,44
+1,23670,Knox,47
+1,23810,Latrobe,38
+1,23940,Loddon,9
+1,24130,Macedon Ranges,28
+1,24210,Manningham,31
+1,24250,Mansfield,7
+1,24330,Maribyrnong,22
+1,24410,Maroondah,35
+1,24600,Melbourne,21
+1,24650,Melton,29
+1,24780,Mildura,34
+1,24850,Mitchell,18
+1,24900,Moira,23
+1,24970,Monash,55
+1,25060,Moonee Valley,38
+1,25150,Moorabool,20
+1,25250,Moreland,45
+1,25340,Mornington Peninsula,50
+1,25430,Mount Alexander,17
+1,25490,Moyne,13
+1,25620,Murrindindi,18
+1,25710,Nillumbik,27
+1,25810,Northern Grampians,13
+1,25900,Port Phillip,17
+1,25990,Pyrenees,9
+1,26080,Queenscliffe,3
+1,26170,South Gippsland,22
+1,26260,Southern Grampians,18
+1,26350,Stonnington,23
+1,26430,Strathbogie,8
+1,26490,Surf Coast,9
+1,26610,Swan Hill,17
+1,26670,Towong,11
+1,26700,Wangaratta,24
+1,26730,Warrnambool,15
+1,26810,Wellington,37
+1,26890,West Wimmera,5
+1,26980,Whitehorse,53
+1,27070,Whittlesea,44
+1,27170,Wodonga,17
+1,27260,Wyndham,38
+1,27350,Yarra,28
+1,27450,Yarra Ranges,81
+1,27630,Yarriambiack,15
+1,29399,Unincorporated Vic,
+2,20110,Alpine,3
+2,20260,Ararat,2
+2,20570,Ballarat,4
+2,20660,Banyule,8
+2,20740,Bass Coast,1
+2,20830,Baw Baw,2
+2,20910,Bayside,6
+2,21010,Benalla,1
+2,21110,Boroondara,15
+2,21180,Brimbank,5
+2,21270,Buloke,5
+2,21370,Campaspe,4
+2,21450,Cardinia,1
+2,21610,Casey,6
+2,21670,Central Goldfields,2
+2,21750,Colac-Otway,2
+2,21830,Corangamite,5
+2,21890,Darebin,4
+2,22110,East Gippsland,3
+2,22170,Frankston,7
+2,22250,Gannawarra,2
+2,22310,Glen Eira,12
+2,22410,Glenelg,3
+2,22490,Golden Plains,0
+2,22620,Greater Bendigo,5
+2,22670,Greater Dandenong,10
+2,22750,Greater Geelong,7
+2,22830,Greater Shepparton,3
+2,22910,Hepburn,2
+2,22980,Hindmarsh,4
+2,23110,Hobsons Bay,2
+2,23190,Horsham,1
+2,23270,Hume,4
+2,23350,Indigo,2
+2,23430,Kingston,3
+2,23670,Knox,6
+2,23810,Latrobe,2
+2,23940,Loddon,2
+2,24130,Macedon Ranges,1
+2,24210,Manningham,2
+2,24250,Mansfield,1
+2,24330,Maribyrnong,5
+2,24410,Maroondah,4
+2,24600,Melbourne,24
+2,24650,Melton,1
+2,24780,Mildura,3
+2,24850,Mitchell,2
+2,24900,Moira,4
+2,24970,Monash,11
+2,25060,Moonee Valley,3
+2,25150,Moorabool,2
+2,25250,Moreland,5
+2,25340,Mornington Peninsula,6
+2,25430,Mount Alexander,2
+2,25490,Moyne,1
+2,25620,Murrindindi,2
+2,25710,Nillumbik,0
+2,25810,Northern Grampians,2
+2,25900,Port Phillip,4
+2,25990,Pyrenees,1
+2,26080,Queenscliffe,0
+2,26170,South Gippsland,3
+2,26260,Southern Grampians,3
+2,26350,Stonnington,10
+2,26430,Strathbogie,2
+2,26490,Surf Coast,2
+2,26610,Swan Hill,4
+2,26670,Towong,3
+2,26700,Wangaratta,2
+2,26730,Warrnambool,2
+2,26810,Wellington,4
+2,26890,West Wimmera,2
+2,26980,Whitehorse,8
+2,27070,Whittlesea,3
+2,27170,Wodonga,2
+2,27260,Wyndham,3
+2,27350,Yarra,4
+2,27450,Yarra Ranges,2
+2,27630,Yarriambiack,3
+2,29399,Unincorporated Vic,
+3,20110,Alpine,12028
+3,20260,Ararat,11184
+3,20570,Ballarat,100283
+3,20660,Banyule,125503
+3,20740,Bass Coast,31623
+3,20830,Baw Baw,45945
+3,20910,Bayside,99947
+3,21010,Benalla,13597
+3,21110,Boroondara,172612
+3,21180,Brimbank,197701
+3,21270,Buloke,6086
+3,21370,Campaspe,36881
+3,21450,Cardinia,87008
+3,21610,Casey,283415
+3,21670,Central Goldfields,12606
+3,21750,Colac-Otway,20501
+3,21830,Corangamite,15996
+3,21890,Darebin,148728
+3,22110,East Gippsland,43772
+3,22170,Frankston,135243
+3,22250,Gannawarra,10145
+3,22310,Glen Eira,144059
+3,22410,Glenelg,19357
+3,22490,Golden Plains,20544
+3,22620,Greater Bendigo,106971
+3,22670,Greater Dandenong,149518
+3,22750,Greater Geelong,224926
+3,22830,Greater Shepparton,63269
+3,22910,Hepburn,14888
+3,22980,Hindmarsh,5644
+3,23110,Hobsons Bay,91148
+3,23190,Horsham,19691
+3,23270,Hume,188832
+3,23350,Indigo,15409
+3,23430,Kingston,153079
+3,23670,Knox,155508
+3,23810,Latrobe,73653
+3,23940,Loddon,7365
+3,24130,Macedon Ranges,44715
+3,24210,Manningham,118521
+3,24250,Mansfield,8217
+3,24330,Maribyrnong,81859
+3,24410,Maroondah,111223
+3,24600,Melbourne,122207
+3,24650,Melton,127677
+3,24780,Mildura,53036
+3,24850,Mitchell,38515
+3,24900,Moira,28833
+3,24970,Monash,185037
+3,25060,Moonee Valley,117337
+3,25150,Moorabool,30926
+3,25250,Moreland,163488
+3,25340,Mornington Peninsula,153800
+3,25430,Mount Alexander,18102
+3,25490,Moyne,16344
+3,25620,Murrindindi,13595
+3,25710,Nillumbik,62872
+3,25810,Northern Grampians,11719
+3,25900,Port Phillip,104846
+3,25990,Pyrenees,6979
+3,26080,Queenscliffe,3027
+3,26170,South Gippsland,27937
+3,26260,Southern Grampians,15919
+3,26350,Stonnington,105981
+3,26430,Strathbogie,9810
+3,26490,Surf Coast,28481
+3,26610,Swan Hill,20580
+3,26670,Towong,5797
+3,26700,Wangaratta,27117
+3,26730,Warrnambool,33501
+3,26810,Wellington,42220
+3,26890,West Wimmera,3982
+3,26980,Whitehorse,163697
+3,27070,Whittlesea,187006
+3,27170,Wodonga,38131
+3,27260,Wyndham,199715
+3,27350,Yarra,86506
+3,27450,Yarra Ranges,150098
+3,27630,Yarriambiack,6892
+3,29399,Unincorporated Vic,757
+4,20110,Alpine,524
+4,20260,Ararat,1149
+4,20570,Ballarat,10349
+4,20660,Banyule,8709
+4,20740,Bass Coast,2468
+4,20830,Baw Baw,3737
+4,20910,Bayside,4225
+4,21010,Benalla,1169
+4,21110,Boroondara,6754
+4,21180,Brimbank,17304
+4,21270,Buloke,203
+4,21370,Campaspe,2954
+4,21450,Cardinia,5579
+4,21610,Casey,17349
+4,21670,Central Goldfields,1098
+4,21750,Colac-Otway,1512
+4,21830,Corangamite,688
+4,21890,Darebin,14379
+4,22110,East Gippsland,3918
+4,22170,Frankston,14556
+4,22250,Gannawarra,555
+4,22310,Glen Eira,5178
+4,22410,Glenelg,1722
+4,22490,Golden Plains,505
+4,22620,Greater Bendigo,8575
+4,22670,Greater Dandenong,15992
+4,22750,Greater Geelong,18569
+4,22830,Greater Shepparton,7232
+4,22910,Hepburn,597
+4,22980,Hindmarsh,225
+4,23110,Hobsons Bay,6992
+4,23190,Horsham,2390
+4,23270,Hume,17663
+4,23350,Indigo,385
+4,23430,Kingston,9477
+4,23670,Knox,9627
+4,23810,Latrobe,11654
+4,23940,Loddon,519
+4,24130,Macedon Ranges,2155
+4,24210,Manningham,3998
+4,24250,Mansfield,623
+4,24330,Maribyrnong,8092
+4,24410,Maroondah,7600
+4,24600,Melbourne,32301
+4,24650,Melton,9926
+4,24780,Mildura,5876
+4,24850,Mitchell,3202
+4,24900,Moira,1381
+4,24970,Monash,9488
+4,25060,Moonee Valley,8519
+4,25150,Moorabool,1871
+4,25250,Moreland,12703
+4,25340,Mornington Peninsula,10303
+4,25430,Mount Alexander,1154
+4,25490,Moyne,1305
+4,25620,Murrindindi,649
+4,25710,Nillumbik,649
+4,25810,Northern Grampians,909
+4,25900,Port Phillip,12082
+4,25990,Pyrenees,408
+4,26080,Queenscliffe,101
+4,26170,South Gippsland,1285
+4,26260,Southern Grampians,951
+4,26350,Stonnington,9183
+4,26430,Strathbogie,485
+4,26490,Surf Coast,1352
+4,26610,Swan Hill,2160
+4,26670,Towong,186
+4,26700,Wangaratta,3170
+4,26730,Warrnambool,2342
+4,26810,Wellington,4006
+4,26890,West Wimmera,192
+4,26980,Whitehorse,7366
+4,27070,Whittlesea,13827
+4,27170,Wodonga,3250
+4,27260,Wyndham,12957
+4,27350,Yarra,12829
+4,27450,Yarra Ranges,7051
+4,27630,Yarriambiack,456381
+4,29399,Unincorporated Vic,186
+5,20110,,0
+5,20260,,0
+5,20570,,0
+5,20660,,8
+5,20740,,0
+5,20830,,0
+5,20910,,10
+5,21010,,0
+5,21110,,247
+5,21180,,0
+5,21270,,0
+5,21370,,0
+5,21450,,0
+5,21610,,0
+5,21670,,0
+5,21750,,0
+5,21830,,0
+5,21890,,115
+5,22110,,0
+5,22170,,0
+5,22250,,0
+5,22310,,115
+5,22410,,0
+5,22490,,0
+5,22620,,0
+5,22670,,0
+5,22750,,0
+5,22830,,0
+5,22910,,0
+5,22980,,0
+5,23110,,0
+5,23190,,0
+5,23270,,0
+5,23350,,0
+5,23430,,0
+5,23670,,0
+5,23810,,0
+5,23940,,0
+5,24130,,0
+5,24210,,0
+5,24250,,0
+5,24330,,45
+5,24410,,0
+5,24600,,335
+5,24650,,0
+5,24780,,0
+5,24850,,0
+5,24900,,0
+5,24970,,0
+5,25060,,109
+5,25150,,0
+5,25250,,124
+5,25340,,0
+5,25430,,0
+5,25490,,0
+5,25620,,0
+5,25710,,0
+5,25810,,0
+5,25900,,167
+5,25990,,0
+5,26080,,0
+5,26170,,0
+5,26260,,0
+5,26350,,228
+5,26430,,0
+5,26490,,0
+5,26610,,0
+5,26670,,0
+5,26700,,0
+5,26730,,0
+5,26810,,0
+5,26890,,0
+5,26980,,53
+5,27070,,5
+5,27170,,0
+5,27260,,0
+5,27350,,158
+5,27450,,0
+5,27630,,0
+5,29399,,0
+6,20110,,19
+6,20260,,92
+6,20570,,614
+6,20660,,553
+6,20740,,210
+6,20830,,81
+6,20910,,467
+6,21010,,53
+6,21110,,452
+6,21180,,785
+6,21270,,25
+6,21370,,84
+6,21450,,317
+6,21610,,1055
+6,21670,,113
+6,21750,,106
+6,21830,,27
+6,21890,,738
+6,22110,,183
+6,22170,,632
+6,22250,,15
+6,22310,,502
+6,22410,,78
+6,22490,,29
+6,22620,,744
+6,22670,,671
+6,22750,,1299
+6,22830,,378
+6,22910,,86
+6,22980,,10
+6,23110,,428
+6,23190,,143
+6,23270,,826
+6,23350,,23
+6,23430,,801
+6,23670,,820
+6,23810,,409
+6,23940,,43
+6,24130,,85
+6,24210,,637
+6,24250,,17
+6,24330,,359
+6,24410,,548
+6,24600,,299
+6,24650,,416
+6,24780,,295
+6,24850,,120
+6,24900,,90
+6,24970,,865
+6,25060,,442
+6,25150,,98
+6,25250,,652
+6,25340,,712
+6,25430,,101
+6,25490,,67
+6,25620,,55
+6,25710,,209
+6,25810,,80
+6,25900,,219
+6,25990,,25
+6,26080,,38
+6,26170,,43
+6,26260,,89
+6,26350,,210
+6,26430,,5
+6,26490,,131
+6,26610,,80
+6,26670,,15
+6,26700,,141
+6,26730,,185
+6,26810,,104
+6,26890,,9
+6,26980,,843
+6,27070,,711
+6,27170,,103
+6,27260,,654
+6,27350,,136
+6,27450,,833
+6,27630,,48
+6,29399,,2
+7,20110,Alpine,1534
+7,20260,Ararat,336
+7,20570,Ballarat,10
+7,20660,Banyule,7
+7,20740,Bass Coast,5
+7,20830,Baw Baw,162
+7,20910,Bayside,5
+7,21010,Benalla,498
+7,21110,Boroondara,1
+7,21180,Brimbank,277
+7,21270,Buloke,650
+7,21370,Campaspe,142
+7,21450,Cardinia,1221
+7,21610,Casey,1056
+7,21670,Central Goldfields,235
+7,21750,Colac-Otway,370
+7,21830,Corangamite,187
+7,21890,Darebin,1010
+7,22110,East Gippsland,200
+7,22170,Frankston,1911
+7,22250,Gannawarra,1410
+7,22310,Glen Eira,88
+7,22410,Glenelg,88
+7,22490,Golden Plains,421
+7,22620,Greater Bendigo,15
+7,22670,Greater Dandenong,831
+7,22750,Greater Geelong,249
+7,22830,Greater Shepparton,151
+7,22910,Hepburn,11
+7,22980,Hindmarsh,1384
+7,23110,Hobsons Bay,988
+7,23190,Horsham,1546
+7,23270,Hume,2628
+7,23350,Indigo,154
+7,23430,Kingston,385
+7,23670,Knox,232
+7,23810,Latrobe,1718
+7,23940,Loddon,689
+7,24130,Macedon Ranges,1299
+7,24210,Manningham,129
+7,24250,Mansfield,184
+7,24330,Maribyrnong,2319
+7,24410,Maroondah,1528
+7,24600,Melbourne,239
+7,24650,Melton,0
+7,24780,Mildura,0
+7,24850,Mitchell,0
+7,24900,Moira,0
+7,24970,Monash,225
+7,25060,Moonee Valley,147
+7,25150,Moorabool,389
+7,25250,Moreland,59
+7,25340,Mornington Peninsula,901
+7,25430,Mount Alexander,239
+7,25490,Moyne,1986
+7,25620,Murrindindi,213
+7,25710,Nillumbik,1640
+7,25810,Northern Grampians,549
+7,25900,Port Phillip,1440
+7,25990,Pyrenees,839
+7,26080,Queenscliffe,1543
+7,26170,South Gippsland,485
+7,26260,Southern Grampians,480
+7,26350,Stonnington,834
+7,26430,Strathbogie,302
+7,26490,Surf Coast,1001
+7,26610,Swan Hill,143
+7,26670,Towong,299
+7,26700,Wangaratta,1133
+7,26730,Warrnambool,4258
+7,26810,Wellington,950
+7,26890,West Wimmera,558
+7,26980,Whitehorse,577
+7,27070,Whittlesea,311
+7,27170,Wodonga,238
+7,27260,Wyndham,1922
+7,27350,Yarra,1088
+7,27450,Yarra Ranges,431
+7,27630,Yarriambiack,2110
+7,29399,Unincorporated Vic,299
+8,20110,Alpine,210000
+8,20260,Ararat,
+8,20570,Ballarat,309000
+8,20660,Banyule,
+8,20740,Bass Coast,409872.7273
+8,20830,Baw Baw,333250
+8,20910,Bayside,1147500
+8,21010,Benalla,251000
+8,21110,Boroondara,2178000
+8,21180,Brimbank,448125
+8,21270,Buloke,150000
+8,21370,Campaspe,168800
+8,21450,Cardinia,345860
+8,21610,Casey,419162.5
+8,21670,Central Goldfields,
+8,21750,Colac-Otway,333460
+8,21830,Corangamite,
+8,21890,Darebin,594300
+8,22110,East Gippsland,264228.5714
+8,22170,Frankston,348000
+8,22250,Gannawarra,137500
+8,22310,Glen Eira,1285166.667
+8,22410,Glenelg,185000
+8,22490,Golden Plains,269650
+8,22620,Greater Bendigo,308291.6667
+8,22670,Greater Dandenong,404760
+8,22750,Greater Geelong,387520.8333
+8,22830,Greater Shepparton,212833.3333
+8,22910,Hepburn,307550
+8,22980,Hindmarsh,
+8,23110,Hobsons Bay,838500
+8,23190,Horsham,228000
+8,23270,Hume,444916.6667
+8,23350,Indigo,212500
+8,23430,Kingston,782935.7143
+8,23670,Knox,522000
+8,23810,Latrobe,145750
+8,23940,Loddon,227428.5714
+8,24130,Macedon Ranges,488000
+8,24210,Manningham,981583.3333
+8,24250,Mansfield,337500
+8,24330,Maribyrnong,
+8,24410,Maroondah,803333.3333
+8,24600,Melbourne,740260
+8,24650,Melton,401200
+8,24780,Mildura,201250
+8,24850,Mitchell,312500
+8,24900,Moira,218042.8571
+8,24970,Monash,625017.6471
+8,25060,Moonee Valley,666037.5
+8,25150,Moorabool,350319.2308
+8,25250,Moreland,703141.9355
+8,25340,Mornington Peninsula,582616.129
+8,25430,Mount Alexander,334912.5
+8,25490,Moyne,245144.4444
+8,25620,Murrindindi,255000
+8,25710,Nillumbik,665383.3333
+8,25810,Northern Grampians,145750
+8,25900,Port Phillip,1398125
+8,25990,Pyrenees,231166.6667
+8,26080,Queenscliffe,481300
+8,26170,South Gippsland,287368.4211
+8,26260,Southern Grampians,173260
+8,26350,Stonnington,1156838.095
+8,26430,Strathbogie,317700
+8,26490,Surf Coast,535925
+8,26610,Swan Hill,169400
+8,26670,Towong,166250
+8,26700,Wangaratta,259833.3333
+8,26730,Warrnambool,299333.3333
+8,26810,Wellington,242929.6296
+8,26890,West Wimmera,107500
+8,26980,Whitehorse,1030361.29
+8,27070,Whittlesea,438539.1304
+8,27170,Wodonga,288025
+8,27260,Wyndham,439290
+8,27350,Yarra,1233034.783
+8,27450,Yarra Ranges,464438.9831
+8,27630,Yarriambiack,85833.33333
+8,29399,Unincorporated Vic,
+9,20110,Alpine,1515
+9,20260,Ararat,1106
+9,20570,Ballarat,7447
+9,20660,Banyule,10268
+9,20740,Bass Coast,2778
+9,20830,Baw Baw,4930
+9,20910,Bayside,12699
+9,21010,Benalla,1525
+9,21110,Boroondara,23693
+9,21180,Brimbank,13300
+9,21270,Buloke,1002
+9,21370,Campaspe,4243
+9,21450,Cardinia,6680
+9,21610,Casey,17054
+9,21670,Central Goldfields,844
+9,21750,Colac-Otway,2325
+9,21830,Corangamite,2403
+9,21890,Darebin,11567
+9,22110,East Gippsland,4390
+9,22170,Frankston,9679
+9,22250,Gannawarra,1389
+9,22310,Glen Eira,15026
+9,22410,Glenelg,2082
+9,22490,Golden Plains,1629
+9,22620,Greater Bendigo,7661
+9,22670,Greater Dandenong,12681
+9,22750,Greater Geelong,15852
+9,22830,Greater Shepparton,6371
+9,22910,Hepburn,1456
+9,22980,Hindmarsh,858
+9,23110,Hobsons Bay,7099
+9,23190,Horsham,2140
+9,23270,Hume,12611
+9,23350,Indigo,1735
+9,23430,Kingston,15866
+9,23670,Knox,13202
+9,23810,Latrobe,4480
+9,23940,Loddon,1071
+9,24130,Macedon Ranges,4487
+9,24210,Manningham,12772
+9,24250,Mansfield,1128
+9,24330,Maribyrnong,6225
+9,24410,Maroondah,9172
+9,24600,Melbourne,34188
+9,24650,Melton,6186
+9,24780,Mildura,5156
+9,24850,Mitchell,2915
+9,24900,Moira,3177
+9,24970,Monash,18155
+9,25060,Moonee Valley,10318
+9,25150,Moorabool,2502
+9,25250,Moreland,11702
+9,25340,Mornington Peninsula,14029
+9,25430,Mount Alexander,1506
+9,25490,Moyne,2262
+9,25620,Murrindindi,1748
+9,25710,Nillumbik,6500
+9,25810,Northern Grampians,1232
+9,25900,Port Phillip,17769
+9,25990,Pyrenees,821
+9,26080,Queenscliffe,319
+9,26170,South Gippsland,3804
+9,26260,Southern Grampians,2087
+9,26350,Stonnington,16803
+9,26430,Strathbogie,1353
+9,26490,Surf Coast,3054
+9,26610,Swan Hill,2514
+9,26670,Towong,917
+9,26700,Wangaratta,3079
+9,26730,Warrnambool,2998
+9,26810,Wellington,3961
+9,26890,West Wimmera,733
+9,26980,Whitehorse,14690
+9,27070,Whittlesea,11287
+9,27170,Wodonga,2715
+9,27260,Wyndham,9606
+9,27350,Yarra,13535
+9,27450,Yarra Ranges,13585
+9,27630,Yarriambiack,1039
+9,29399,Unincorporated Vic,119
+11,20110,Alpine,3
+11,20260,Ararat,6
+11,20570,Ballarat,30
+11,20660,Banyule,46
+11,20740,Bass Coast,8
+11,20830,Baw Baw,15
+11,20910,Bayside,40
+11,21010,Benalla,4
+11,21110,Boroondara,61
+11,21180,Brimbank,56
+11,21270,Buloke,5
+11,21370,Campaspe,13
+11,21450,Cardinia,28
+11,21610,Casey,68
+11,21670,Central Goldfields,5
+11,21750,Colac-Otway,10
+11,21830,Corangamite,8
+11,21890,Darebin,41
+11,22110,East Gippsland,17
+11,22170,Frankston,36
+11,22250,Gannawarra,4
+11,22310,Glen Eira,40
+11,22410,Glenelg,9
+11,22490,Golden Plains,8
+11,22620,Greater Bendigo,26
+11,22670,Greater Dandenong,37
+11,22750,Greater Geelong,63
+11,22830,Greater Shepparton,27
+11,22910,Hepburn,6
+11,22980,Hindmarsh,4
+11,23110,Hobsons Bay,25
+11,23190,Horsham,9
+11,23270,Hume,46
+11,23350,Indigo,7
+11,23430,Kingston,38
+11,23670,Knox,46
+11,23810,Latrobe,25
+11,23940,Loddon,5
+11,24130,Macedon Ranges,11
+11,24210,Manningham,44
+11,24250,Mansfield,2
+11,24330,Maribyrnong,22
+11,24410,Maroondah,38
+11,24600,Melbourne,27
+11,24650,Melton,32
+11,24780,Mildura,14
+11,24850,Mitchell,11
+11,24900,Moira,11
+11,24970,Monash,60
+11,25060,Moonee Valley,35
+11,25150,Moorabool,7
+11,25250,Moreland,46
+11,25340,Mornington Peninsula,36
+11,25430,Mount Alexander,7
+11,25490,Moyne,7
+11,25620,Murrindindi,6
+11,25710,Nillumbik,25
+11,25810,Northern Grampians,3
+11,25900,Port Phillip,26
+11,25990,Pyrenees,3
+11,26080,Queenscliffe,2
+11,26170,South Gippsland,13
+11,26260,Southern Grampians,11
+11,26350,Stonnington,32
+11,26430,Strathbogie,4
+11,26490,Surf Coast,8
+11,26610,Swan Hill,9
+11,26670,Towong,5
+11,26700,Wangaratta,9
+11,26730,Warrnambool,9
+11,26810,Wellington,18
+11,26890,West Wimmera,3
+11,26980,Whitehorse,55
+11,27070,Whittlesea,38
+11,27170,Wodonga,13
+11,27260,Wyndham,37
+11,27350,Yarra,29
+11,27450,Yarra Ranges,55
+11,27630,Yarriambiack,7
+11,29399,Unincorporated Vic,
+21,20110,Alpine,1053
+21,20260,Ararat,1145
+21,20570,Ballarat,6022
+21,20660,Banyule,12690
+21,20740,Bass Coast,2568
+21,20830,Baw Baw,4035
+21,20910,Bayside,10501
+21,21010,Benalla,2423
+21,21110,Boroondara,11181
+21,21180,Brimbank,16571
+21,21270,Buloke,389
+21,21370,Campaspe,1687
+21,21450,Cardinia,5445
+21,21610,Casey,15008
+21,21670,Central Goldfields,998
+21,21750,Colac-Otway,1226
+21,21830,Corangamite,896
+21,21890,Darebin,11856
+21,22110,East Gippsland,1822
+21,22170,Frankston,11353
+21,22250,Gannawarra,1027
+21,22310,Glen Eira,12315
+21,22410,Glenelg,1056
+21,22490,Golden Plains,1727
+21,22620,Greater Bendigo,4429
+21,22670,Greater Dandenong,14462
+21,22750,Greater Geelong,8563
+21,22830,Greater Shepparton,2961
+21,22910,Hepburn,1617
+21,22980,Hindmarsh,778
+21,23110,Hobsons Bay,16106
+21,23190,Horsham,2467
+21,23270,Hume,14261
+21,23350,Indigo,1256
+21,23430,Kingston,12567
+21,23670,Knox,13641
+21,23810,Latrobe,3718
+21,23940,Loddon,548
+21,24130,Macedon Ranges,3390
+21,24210,Manningham,11886
+21,24250,Mansfield,1088
+21,24330,Maribyrnong,11839
+21,24410,Maroondah,12606
+21,24600,Melbourne,15156
+21,24650,Melton,9919
+21,24780,Mildura,2714
+21,24850,Mitchell,4910
+21,24900,Moira,1474
+21,24970,Monash,19023
+21,25060,Moonee Valley,13630
+21,25150,Moorabool,5244
+21,25250,Moreland,11555
+21,25340,Mornington Peninsula,5040
+21,25430,Mount Alexander,2144
+21,25490,Moyne,1107
+21,25620,Murrindindi,961
+21,25710,Nillumbik,7508
+21,25810,Northern Grampians,756
+21,25900,Port Phillip,14045
+21,25990,Pyrenees,825
+21,26080,Queenscliffe,2212
+21,26170,South Gippsland,1536
+21,26260,Southern Grampians,572
+21,26350,Stonnington,15139
+21,26430,Strathbogie,1674
+21,26490,Surf Coast,2564
+21,26610,Swan Hill,1506
+21,26670,Towong,383
+21,26700,Wangaratta,2855
+21,26730,Warrnambool,5170
+21,26810,Wellington,1919
+21,26890,West Wimmera,404
+21,26980,Whitehorse,16071
+21,27070,Whittlesea,14118
+21,27170,Wodonga,6263
+21,27260,Wyndham,14347
+21,27350,Yarra,15442
+21,27450,Yarra Ranges,5231
+21,27630,Yarriambiack,325
+21,29399,Unincorporated Vic,
+22,20110,Alpine,20
+22,20260,Ararat,860
+22,20570,Ballarat,560
+22,20660,Banyule,170
+22,20740,Bass Coast,80
+22,20830,Baw Baw,80
+22,20910,Bayside,560
+22,21010,Benalla,10
+22,21110,Boroondara,20
+22,21180,Brimbank,950
+22,21270,Buloke,80
+22,21370,Campaspe,140
+22,21450,Cardinia,180
+22,21610,Casey,640
+22,21670,Central Goldfields,210
+22,21750,Colac-Otway,100
+22,21830,Corangamite,60
+22,21890,Darebin,170
+22,22110,East Gippsland,10
+22,22170,Frankston,240
+22,22250,Gannawarra,460
+22,22310,Glen Eira,1300
+22,22410,Glenelg,180
+22,22490,Golden Plains,320
+22,22620,Greater Bendigo,110
+22,22670,Greater Dandenong,950
+22,22750,Greater Geelong,440
+22,22830,Greater Shepparton,940
+22,22910,Hepburn,110
+22,22980,Hindmarsh,730
+22,23110,Hobsons Bay,1300
+22,23190,Horsham,170
+22,23270,Hume,5200
+22,23350,Indigo,70
+22,23430,Kingston,220
+22,23670,Knox,910
+22,23810,Latrobe,100
+22,23940,Loddon,120
+22,24130,Macedon Ranges,140
+22,24210,Manningham,350
+22,24250,Mansfield,180
+22,24330,Maribyrnong,1000
+22,24410,Maroondah,260
+22,24600,Melbourne,1100
+22,24650,Melton,1100
+22,24780,Mildura,80
+22,24850,Mitchell,170
+22,24900,Moira,250
+22,24970,Monash,670
+22,25060,Moonee Valley,180
+22,25150,Moorabool,2500
+22,25250,Moreland,130
+22,25340,Mornington Peninsula,110
+22,25430,Mount Alexander,170
+22,25490,Moyne,250
+22,25620,Murrindindi,240
+22,25710,Nillumbik,440
+22,25810,Northern Grampians,70
+22,25900,Port Phillip,1100
+22,25990,Pyrenees,10
+22,26080,Queenscliffe,180
+22,26170,South Gippsland,30
+22,26260,Southern Grampians,50
+22,26350,Stonnington,200
+22,26430,Strathbogie,200
+22,26490,Surf Coast,30
+22,26610,Swan Hill,30
+22,26670,Towong,20
+22,26700,Wangaratta,100
+22,26730,Warrnambool,160
+22,26810,Wellington,780
+22,26890,West Wimmera,10
+22,26980,Whitehorse,1700
+22,27070,Whittlesea,110
+22,27170,Wodonga,310
+22,27260,Wyndham,6500
+22,27350,Yarra,150
+22,27450,Yarra Ranges,630
+22,27630,Yarriambiack,60
+22,29399,Unincorporated Vic,
+23,20110,Alpine,2040
+23,20260,Ararat,
+23,20570,Ballarat,408
+23,20660,Banyule,
+23,20740,Bass Coast,1670
+23,20830,Baw Baw,960
+23,20910,Bayside,390
+23,21010,Benalla,901
+23,21110,Boroondara,390
+23,21180,Brimbank,854
+23,21270,Buloke,1310
+23,21370,Campaspe,2534
+23,21450,Cardinia,2340
+23,21610,Casey,1664
+23,21670,Central Goldfields,
+23,21750,Colac-Otway,624
+23,21830,Corangamite,312
+23,21890,Darebin,780
+23,22110,East Gippsland,6640
+23,22170,Frankston,780
+23,22250,Gannawarra,3930
+23,22310,Glen Eira,780
+23,22410,Glenelg,1220
+23,22490,Golden Plains,2325
+23,22620,Greater Bendigo,2040
+23,22670,Greater Dandenong,1950
+23,22750,Greater Geelong,2874
+23,22830,Greater Shepparton,3264
+23,22910,Hepburn,816
+23,22980,Hindmarsh,
+23,23110,Hobsons Bay,427
+23,23190,Horsham,1310
+23,23270,Hume,2989
+23,23350,Indigo,1780
+23,23430,Kingston,5964
+23,23670,Knox,780
+23,23810,Latrobe,963
+23,23940,Loddon,14152
+23,24130,Macedon Ranges,2486
+23,24210,Manningham,1170
+23,24250,Mansfield,408
+23,24330,Maribyrnong,
+23,24410,Maroondah,780
+23,24600,Melbourne,3374
+23,24650,Melton,2562
+23,24780,Mildura,21585
+23,24850,Mitchell,2078
+23,24900,Moira,13090
+23,24970,Monash,4290
+23,25060,Moonee Valley,2639
+23,25150,Moorabool,5342
+23,25250,Moreland,6713
+23,25340,Mornington Peninsula,10140
+23,25430,Mount Alexander,5304
+23,25490,Moyne,2407
+23,25620,Murrindindi,2448
+23,25710,Nillumbik,4791
+23,25810,Northern Grampians,1632
+23,25900,Port Phillip,3414
+23,25990,Pyrenees,5893
+23,26080,Queenscliffe,208
+23,26170,South Gippsland,5918
+23,26260,Southern Grampians,3787
+23,26350,Stonnington,5136
+23,26430,Strathbogie,6936
+23,26490,Surf Coast,1998
+23,26610,Swan Hill,27510
+23,26670,Towong,5917
+23,26700,Wangaratta,6972
+23,26730,Warrnambool,905
+23,26810,Wellington,15981
+23,26890,West Wimmera,13626
+23,26980,Whitehorse,7800
+23,27070,Whittlesea,9230
+23,27170,Wodonga,3004
+23,27260,Wyndham,5532
+23,27350,Yarra,8502
+23,27450,Yarra Ranges,16434
+23,27630,Yarriambiack,23000
+24,20110,Alpine,3463
+24,20260,Ararat,
+24,20570,Ballarat,3463
+24,20660,Banyule,
+24,20740,Bass Coast,1974
+24,20830,Baw Baw,2404
+24,20910,Bayside,1974
+24,21010,Benalla,3463
+24,21110,Boroondara,1974
+24,21180,Brimbank,2270
+24,21270,Buloke,1653
+24,21370,Campaspe,3463
+24,21450,Cardinia,1974
+24,21610,Casey,1893
+24,21670,Central Goldfields,
+24,21750,Colac-Otway,1893
+24,21830,Corangamite,1893
+24,21890,Darebin,1974
+24,22110,East Gippsland,6230
+24,22170,Frankston,1974
+24,22250,Gannawarra,1653
+24,22310,Glen Eira,1974
+24,22410,Glenelg,2621
+24,22490,Golden Plains,3463
+24,22620,Greater Bendigo,3463
+24,22670,Greater Dandenong,1974
+24,22750,Greater Geelong,1893
+24,22830,Greater Shepparton,3463
+24,22910,Hepburn,3463
+24,22980,Hindmarsh,
+24,23110,Hobsons Bay,2270
+24,23190,Horsham,1653
+24,23270,Hume,2270
+24,23350,Indigo,3463
+24,23430,Kingston,1974
+24,23670,Knox,1974
+24,23810,Latrobe,1999
+24,23940,Loddon,3463
+24,24130,Macedon Ranges,3463
+24,24210,Manningham,1974
+24,24250,Mansfield,3463
+24,24330,Maribyrnong,
+24,24410,Maroondah,1974
+24,24600,Melbourne,2270
+24,24650,Melton,2270
+24,24780,Mildura,1102
+24,24850,Mitchell,3463
+24,24900,Moira,3463
+24,24970,Monash,1974
+24,25060,Moonee Valley,2270
+24,25150,Moorabool,3463
+24,25250,Moreland,2270
+24,25340,Mornington Peninsula,1974
+24,25430,Mount Alexander,3463
+24,25490,Moyne,1893
+24,25620,Murrindindi,3463
+24,25710,Nillumbik,1974
+24,25810,Northern Grampians,3463
+24,25900,Port Phillip,1974
+24,25990,Pyrenees,3463
+24,26080,Queenscliffe,1893
+24,26170,South Gippsland,1893
+24,26260,Southern Grampians,3463
+24,26350,Stonnington,1974
+24,26430,Strathbogie,3463
+24,26490,Surf Coast,1893
+24,26610,Swan Hill,1653
+24,26670,Towong,3463
+24,26700,Wangaratta,3463
+24,26730,Warrnambool,2621
+24,26810,Wellington,3463
+24,26890,West Wimmera,2688
+24,26980,Whitehorse,1974
+24,27070,Whittlesea,3463
+24,27170,Wodonga,3463
+24,27260,Wyndham,3463
+24,27350,Yarra,1974
+24,27450,Yarra Ranges,3463
+24,27630,Yarriambiack,3463
+25,20110,Alpine,2.511992949
+25,20260,Ararat,2.655674177
+25,20570,Ballarat,135.6954386
+25,20660,Banyule,2006.763671
+25,20740,Bass Coast,36.56852768
+25,20830,Baw Baw,11.39712449
+25,20910,Bayside,2686.025262
+25,21010,Benalla,5.779464771
+25,21110,Boroondara,2868.261881
+25,21180,Brimbank,1602.115073
+25,21270,Buloke,0.7607119644
+25,21370,Campaspe,8.161571724
+25,21450,Cardinia,67.88589976
+25,21610,Casey,692.2353573
+25,21670,Central Goldfields,8.224272237
+25,21750,Colac-Otway,5.963961972
+25,21830,Corangamite,3.629227122
+25,21890,Darebin,2781.522349
+25,22110,East Gippsland,2.090363373
+25,22170,Frankston,1043.541667
+25,22250,Gannawarra,2.715950891
+25,22310,Glen Eira,3723.416904
+25,22410,Glenelg,3.112913679
+25,22490,Golden Plains,7.599235046
+25,22620,Greater Bendigo,35.65723771
+25,22670,Greater Dandenong,1153.688272
+25,22750,Greater Geelong,180.2450537
+25,22830,Greater Shepparton,26.12316522
+25,22910,Hepburn,10.10740132
+25,22980,Hindmarsh,0.7501149627
+25,23110,Hobsons Bay,1418.86675
+25,23190,Horsham,4.614652712
+25,23270,Hume,374.793085
+25,23350,Indigo,7.553172195
+25,23430,Kingston,1675.37485
+25,23670,Knox,1366.142493
+25,23810,Latrobe,51.65876445
+25,23940,Loddon,1.099838123
+25,24130,Macedon Ranges,25.57656668
+25,24210,Manningham,1045.619762
+25,24250,Mansfield,2.137661554
+25,24330,Maribyrnong,2621.165546
+25,24410,Maroondah,1811.154535
+25,24600,Melbourne,3271.06531
+25,24650,Melton,242.0141785
+25,24780,Mildura,2.40172082
+25,24850,Mitchell,13.45535087
+25,24900,Moira,7.125328984
+25,24970,Monash,2270.392638
+25,25060,Moonee Valley,2719.911915
+25,25150,Moorabool,14.65256654
+25,25250,Moreland,3208.792934
+25,25340,Mornington Peninsula,212.4104023
+25,25430,Mount Alexander,11.83431179
+25,25490,Moyne,2.981529621
+25,25620,Murrindindi,3.504407898
+25,25710,Nillumbik,145.4225841
+25,25810,Northern Grampians,2.045914804
+25,25900,Port Phillip,5062.578465
+25,25990,Pyrenees,2.031986537
+25,26080,Queenscliffe,351.1600928
+25,26170,South Gippsland,8.472561299
+25,26260,Southern Grampians,2.391881516
+25,26350,Stonnington,4131.812865
+25,26430,Strathbogie,2.969793477
+25,26490,Surf Coast,18.34005177
+25,26610,Swan Hill,3.36532408
+25,26670,Towong,0.8684709249
+25,26700,Wangaratta,7.43983275
+25,26730,Warrnambool,277.2114191
+25,26810,Wellington,10.27228114
+25,26890,West Wimmera,0.4371793478
+25,26980,Whitehorse,2546.624144
+25,27070,Whittlesea,381.8709032
+25,27170,Wodonga,88.12544778
+25,27260,Wyndham,368.4166836
+25,27350,Yarra,4427.123849
+25,27450,Yarra Ranges,60.8734092
+25,27630,Yarriambiack,0.9407846242
+31,20110,Alpine,130.00
+31,20260,Ararat,
+31,20570,Ballarat,160.00
+31,20660,Banyule,270.00
+31,20740,Bass Coast,
+31,20830,Baw Baw,163.00
+31,20910,Bayside,310.00
+31,21010,Benalla,155.00
+31,21110,Boroondara,295.00
+31,21180,Brimbank,200.00
+31,21270,Buloke,
+31,21370,Campaspe,133.00
+31,21450,Cardinia,
+31,21610,Casey,167.00
+31,21670,Central Goldfields,
+31,21750,Colac-Otway,185.00
+31,21830,Corangamite,
+31,21890,Darebin,260.00
+31,22110,East Gippsland,155.00
+31,22170,Frankston,205.00
+31,22250,Gannawarra,
+31,22310,Glen Eira,270.00
+31,22410,Glenelg,
+31,22490,Golden Plains,
+31,22620,Greater Bendigo,165.00
+31,22670,Greater Dandenong,210.00
+31,22750,Greater Geelong,195.00
+31,22830,Greater Shepparton,140.00
+31,22910,Hepburn,
+31,22980,Hindmarsh,
+31,23110,Hobsons Bay,250.00
+31,23190,Horsham,232.00
+31,23270,Hume,200.00
+31,23350,Indigo,
+31,23430,Kingston,260.00
+31,23670,Knox,213.00
+31,23810,Latrobe,120.00
+31,23940,Loddon,
+31,24130,Macedon Ranges,
+31,24210,Manningham,350.00
+31,24250,Mansfield,
+31,24330,Maribyrnong,235.00
+31,24410,Maroondah,230.00
+31,24600,Melbourne,380.00
+31,24650,Melton,290.00
+31,24780,Mildura,137.00
+31,24850,Mitchell,
+31,24900,Moira,110.00
+31,24970,Monash,280.00
+31,25060,Moonee Valley,260.00
+31,25150,Moorabool,
+31,25250,Moreland,275.00
+31,25340,Mornington Peninsula,220.00
+31,25430,Mount Alexander,
+31,25490,Moyne,
+31,25620,Murrindindi,
+31,25710,Nillumbik,
+31,25810,Northern Grampians,120.00
+31,25900,Port Phillip,330.00
+31,25990,Pyrenees,
+31,26080,Queenscliffe,
+31,26170,South Gippsland,
+31,26260,Southern Grampians,135.00
+31,26350,Stonnington,325.00
+31,26430,Strathbogie,130.00
+31,26490,Surf Coast,
+31,26610,Swan Hill,128.00
+31,26670,Towong,
+31,26700,Wangaratta,140.00
+31,26730,Warrnambool,150.00
+31,26810,Wellington,150.00
+31,26890,West Wimmera,
+31,26980,Whitehorse,240.00
+31,27070,Whittlesea,260.00
+31,27170,Wodonga,160.00
+31,27260,Wyndham,200.00
+31,27350,Yarra,330.00
+31,27450,Yarra Ranges,200.00
+31,27630,Yarriambiack,
+31,29399,Unincorporated Vic,
+32,20110,Alpine,185.00
+32,20260,Ararat,220.00
+32,20570,Ballarat,220.00
+32,20660,Banyule,325.00
+32,20740,Bass Coast,245.00
+32,20830,Baw Baw,225.00
+32,20910,Bayside,400.00
+32,21010,Benalla,180.00
+32,21110,Boroondara,380.00
+32,21180,Brimbank,260.00
+32,21270,Buloke,
+32,21370,Campaspe,190.00
+32,21450,Cardinia,255.00
+32,21610,Casey,290.00
+32,21670,Central Goldfields,200.00
+32,21750,Colac-Otway,200.00
+32,21830,Corangamite,190.00
+32,21890,Darebin,340.00
+32,22110,East Gippsland,210.00
+32,22170,Frankston,270.00
+32,22250,Gannawarra,150.00
+32,22310,Glen Eira,380.00
+32,22410,Glenelg,165.00
+32,22490,Golden Plains,270.00
+32,22620,Greater Bendigo,225.00
+32,22670,Greater Dandenong,270.00
+32,22750,Greater Geelong,265.00
+32,22830,Greater Shepparton,195.00
+32,22910,Hepburn,290.00
+32,22980,Hindmarsh,
+32,23110,Hobsons Bay,290.00
+32,23190,Horsham,220.00
+32,23270,Hume,290.00
+32,23350,Indigo,175.00
+32,23430,Kingston,330.00
+32,23670,Knox,320.00
+32,23810,Latrobe,175.00
+32,23940,Loddon,
+32,24130,Macedon Ranges,250.00
+32,24210,Manningham,360.00
+32,24250,Mansfield,220.00
+32,24330,Maribyrnong,340.00
+32,24410,Maroondah,308.00
+32,24600,Melbourne,510.00
+32,24650,Melton,248.00
+32,24780,Mildura,180.00
+32,24850,Mitchell,243.00
+32,24900,Moira,180.00
+32,24970,Monash,350.00
+32,25060,Moonee Valley,350.00
+32,25150,Moorabool,220.00
+32,25250,Moreland,340.00
+32,25340,Mornington Peninsula,265.00
+32,25430,Mount Alexander,250.00
+32,25490,Moyne,
+32,25620,Murrindindi,185.00
+32,25710,Nillumbik,310.00
+32,25810,Northern Grampians,150.00
+32,25900,Port Phillip,450.00
+32,25990,Pyrenees,
+32,26080,Queenscliffe,
+32,26170,South Gippsland,210.00
+32,26260,Southern Grampians,170.00
+32,26350,Stonnington,440.00
+32,26430,Strathbogie,190.00
+32,26490,Surf Coast,285.00
+32,26610,Swan Hill,210.00
+32,26670,Towong,
+32,26700,Wangaratta,180.00
+32,26730,Warrnambool,220.00
+32,26810,Wellington,201.00
+32,26890,West Wimmera,
+32,26980,Whitehorse,350.00
+32,27070,Whittlesea,290.00
+32,27170,Wodonga,210.00
+32,27260,Wyndham,250.00
+32,27350,Yarra,495.00
+32,27450,Yarra Ranges,295.00
+32,27630,Yarriambiack,
+32,29399,Unincorporated Vic,
+33,20110,Alpine,
+33,20260,Ararat,
+33,20570,Ballarat,290.00
+33,20660,Banyule,375.00
+33,20740,Bass Coast,273.00
+33,20830,Baw Baw,255.00
+33,20910,Bayside,525.00
+33,21010,Benalla,
+33,21110,Boroondara,505.00
+33,21180,Brimbank,310.00
+33,21270,Buloke,
+33,21370,Campaspe,238.00
+33,21450,Cardinia,290.00
+33,21610,Casey,315.00
+33,21670,Central Goldfields,
+33,21750,Colac-Otway,300.00
+33,21830,Corangamite,
+33,21890,Darebin,400.00
+33,22110,East Gippsland,270.00
+33,22170,Frankston,320.00
+33,22250,Gannawarra,
+33,22310,Glen Eira,500.00
+33,22410,Glenelg,255.00
+33,22490,Golden Plains,
+33,22620,Greater Bendigo,285.00
+33,22670,Greater Dandenong,340.00
+33,22750,Greater Geelong,330.00
+33,22830,Greater Shepparton,280.00
+33,22910,Hepburn,
+33,22980,Hindmarsh,
+33,23110,Hobsons Bay,395.00
+33,23190,Horsham,
+33,23270,Hume,310.00
+33,23350,Indigo,
+33,23430,Kingston,400.00
+33,23670,Knox,370.00
+33,23810,Latrobe,250.00
+33,23940,Loddon,
+33,24130,Macedon Ranges,320.00
+33,24210,Manningham,425.00
+33,24250,Mansfield,
+33,24330,Maribyrnong,410.00
+33,24410,Maroondah,360.00
+33,24600,Melbourne,705.00
+33,24650,Melton,270.00
+33,24780,Mildura,265.00
+33,24850,Mitchell,280.00
+33,24900,Moira,250.00
+33,24970,Monash,420.00
+33,25060,Moonee Valley,410.00
+33,25150,Moorabool,278.00
+33,25250,Moreland,395.00
+33,25340,Mornington Peninsula,350.00
+33,25430,Mount Alexander,
+33,25490,Moyne,
+33,25620,Murrindindi,
+33,25710,Nillumbik,375.00
+33,25810,Northern Grampians,
+33,25900,Port Phillip,630.00
+33,25990,Pyrenees,
+33,26080,Queenscliffe,
+33,26170,South Gippsland,260.00
+33,26260,Southern Grampians,
+33,26350,Stonnington,620.00
+33,26430,Strathbogie,
+33,26490,Surf Coast,370.00
+33,26610,Swan Hill,
+33,26670,Towong,
+33,26700,Wangaratta,283.00
+33,26730,Warrnambool,300.00
+33,26810,Wellington,235.00
+33,26890,West Wimmera,
+33,26980,Whitehorse,430.00
+33,27070,Whittlesea,310.00
+33,27170,Wodonga,250.00
+33,27260,Wyndham,280.00
+33,27350,Yarra,698.00
+33,27450,Yarra Ranges,365.00
+33,27630,Yarriambiack,
+33,29399,Unincorporated Vic,

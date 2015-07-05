@@ -154,13 +154,19 @@ SQL
 
 class AttributeController extends DataAccess {
 
-	const BETTER = 1;
-	const WORSE  = -1;
-	const EQUAL  = 0;
+	const BETTER  = 1;
+	const WORSE   = 2;
+	const EQUAL   = 3;
+	const UNKNOWN = 4;
 
 	public function compare( $valueOne, $valueTwo, array $attribute ) {
 
-		$compare = $attribute[ 'comparator' ];
+		$compare = strtolower( $attribute[ 'comparator' ] );
+
+		if ( $compare == "?" || strlen( trim( $valueOne ) ) === 0 || strlen( trim( $valueTwo ) ) === 0 ) {
+			return self::UNKNOWN; // TODO: Don't have question markes in the source data...
+		}
+
 		if ( $compare == 'higher' || !$compare ) { // TODO: Remove the !$compare, should have higher or lower value instead.
 			if ( $valueOne > $valueTwo  ) {
 				return self::BETTER;
