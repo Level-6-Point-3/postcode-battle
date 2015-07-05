@@ -32,32 +32,28 @@
 
     <script id="battle-field-start-template" type="text/x-handlebars-template">
 
-
-        <div class="battle-field">
-            <div class="battle-ground">
-                <div class="form-group col-md-5 col-lg-5">
-                    <select data-placeholder="Choose the region you want to lose" class="form-control" id="winning-suburb">
-                        <option value=""></option>
-                    </select>
+        <div class="row">
+            <div class="battle-field">
+                <div class="battle-ground">
+                    <div class="form-group col-md-5 col-lg-5">
+                        <select data-placeholder="Choose the region you want to lose" class="form-control"
+                                id="winning-suburb">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="btn-controls col-md-1 col-lg-1">
+                        <button type="submit" class="btn btn-danger " id="do-battle">Battle!</button>
+                    </div>
+                    <div class="form-group col-md-5 col-lg-5">
+                        <select data-placeholder="Choose the region you want to lose" class="form-control"
+                                id="losing-suburb">
+                            <option value=""></option>
+                        </select>
+                    </div>
                 </div>
-                <div class="btn-controls col-md-1 col-lg-1">
-                    <button type="submit" class="btn btn-danger " id="do-battle">Battle!</button>
-                </div>
-                <div class="form-group col-md-5 col-lg-5">
-                    <select data-placeholder="Choose the region you want to lose" class="form-control" id="losing-suburb">
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="form-group col-md-5 col-lg-5">
-                    <img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
-                </div>
-                <!--<div class="btn-controls  col-md-11 col-lg-10">-->
-                <!--&lt;!&ndash;<div class="btn-controls  col-md-2 col-lg-2">&ndash;&gt;-->
-                <!--<button type="submit" class="btn btn-default" id="do-battle">Do Battle!</button>-->
-                <!--</div>-->
             </div>
-
         </div>
+        <div class="row" style="margin-top: 6%"></div>
 
         <div class="row">
             <div class="slides-show">
@@ -74,53 +70,55 @@
         </div>
     </script>
     <script>
-        $( document).ready( function() {
+        $(document).ready(function () {
             var mock = [
                 {
                     "id": "20110",
-                        "name": "Alpine"
+                    "name": "Alpine"
                 },
                 {
-                        "id": "20260",
-                        "name": "Ararat"
-                        },
+                    "id": "20260",
+                    "name": "Ararat"
+                },
                 {
-                        "id": "20570",
-                        "name": "Ballarat"
-                        },
+                    "id": "20570",
+                    "name": "Ballarat"
+                },
                 {
-                        "id": "20660",
-                        "name": "Banyule"
-                        },
+                    "id": "20660",
+                    "name": "Banyule"
+                },
                 {
-                        "id": "20740",
-                        "name": "Bass Coast"
-                        },
+                    "id": "20740",
+                    "name": "Bass Coast"
+                },
                 {
-                        "id": "20830",
-                        "name": "Baw Baw"
-                        },
+                    "id": "20830",
+                    "name": "Baw Baw"
+                },
                 {
-                        "id": "20910",
-                        "name": "Bayside"
-                        },
+                    "id": "20910",
+                    "name": "Bayside"
+                },
                 {
-                        "id": "21010",
-                        "name": "Benalla"
-                        },
+                    "id": "21010",
+                    "name": "Benalla"
+                },
                 {
-                        "id": "21110",
-                        "name": "Boroondara"
+                    "id": "21110",
+                    "name": "Boroondara"
                 }
             ];
 
-            PB.LGAs = mock.map(function( item ) {return new PB.Authority( item ) });
+            PB.LGAs = mock.map(function (item) {
+                return new PB.Authority(item)
+            });
 
-            var winnerList = $( '#winning-suburb' );
-            var loserList = $( '#losing-suburb' );
-            PB.LGAs.forEach( function( item ) {
-                $( '<option>', { value : item.id }).appendTo( winnerList ).text( item.name );
-                $( '<option>', { value : item.id }).appendTo( loserList ).text( item.name );
+            var winnerList = $('#winning-suburb');
+            var loserList = $('#losing-suburb');
+            PB.LGAs.forEach(function (item) {
+                $('<option>', {value: item.id}).appendTo(winnerList).text(item.name);
+                $('<option>', {value: item.id}).appendTo(loserList).text(item.name);
             });
 
             winnerList.chosen();

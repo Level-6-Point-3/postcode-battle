@@ -42,7 +42,16 @@ $(document).ready(function () {
         //});
         var p = $("#gallery").portfolio({
             height: '70%', // gallery height
-            loop: true
+            loop: true,
+            enableKeyboardNavigation: true, // enable / disable keyboard navigation (default: true)
+            easingMethod: 'easeOutQuint', // other easing methods please refer: http://gsgd.co.uk/sandbox/jquery/easing/
+            width: '100%', // gallery width in pixels or in percentage
+            lightbox: true, // dim off other images, highlights only currently viewing image
+            showArrows: true, // show next / prev buttons
+            logger: false, // for debugging purpose, turns on/off console.log() statements in the script
+            spinnerColor: '#000', // Ajax loader color
+            offsetLeft: -4, // position left value for current image
+            opacityLightbox: '0.2' // opacity of other images which are not active
         });
         p.init();
 
