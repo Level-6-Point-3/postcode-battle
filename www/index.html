@@ -6,6 +6,7 @@
     <script src="assets/js/lib/handlebars-v3.0.3.js"></script>
     <script src="assets/js/lib/radio.min.js"></script>
     <script src="assets/js/lib/portfoliojs/js/portfolio.pack.min.js"></script>
+    <script src="assets/js/lib/chosen.jquery.min.js"></script>
 
     <!-- PB Libraries -->
 
@@ -18,6 +19,7 @@
 
     <link href="assets/css/postcode-battle.css" rel="stylesheet"/>
     <link href="assets/js/lib/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/js/lib/chosen.min.css" rel="stylesheet"/>
 
     <!-- handlebars templates start here. -->
     <script id="attribute-template" type="text/x-handlebars-template">
@@ -44,7 +46,9 @@
                 <div class="form-group col-md-5 col-lg-5">
                     <img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
                     <label for="winning-suburb">Choose a suburb you want it to win...</label>
-                    <input type="text" class="form-control" id="winning-suburb">
+                    <select data-placeholder="Choose the region you want to lose" class="form-control" id="winning-suburb">
+                        <option value=""></option>
+                    </select>
                 </div>
                 <div class="col-md-2 col-lg-2">
                     <h3>VS.</h3>
@@ -52,13 +56,70 @@
                 <div class="form-group col-md-5 col-lg-5">
                     <img src="http://www.calicultural.com.br/wp-content/uploads/2014/10/Melbourne1.jpg">
                     <label for="losing-suburb">Choose a suburb you want it to lose...</label>
-                    <input type="text" class="form-control" id="losing-suburb">
+                    <select data-placeholder="Choose the region you want to lose" class="form-control" id="losing-suburb">
+                        <option value=""></option>
+                    </select>
                 </div>
             </div>
             <div class="btn-controls  col-md-11 col-lg-10">
                 <button type="submit" class="btn btn-default" id="do-battle">Do Battle!</button>
             </div>
         </div>
+    </script>
+    <script>
+        $( document).ready( function() {
+            var mock = [
+                {
+                    "id": "20110",
+                        "name": "Alpine"
+                },
+                {
+                        "id": "20260",
+                        "name": "Ararat"
+                        },
+                {
+                        "id": "20570",
+                        "name": "Ballarat"
+                        },
+                {
+                        "id": "20660",
+                        "name": "Banyule"
+                        },
+                {
+                        "id": "20740",
+                        "name": "Bass Coast"
+                        },
+                {
+                        "id": "20830",
+                        "name": "Baw Baw"
+                        },
+                {
+                        "id": "20910",
+                        "name": "Bayside"
+                        },
+                {
+                        "id": "21010",
+                        "name": "Benalla"
+                        },
+                {
+                        "id": "21110",
+                        "name": "Boroondara"
+                }
+            ];
+
+            PB.LGAs = mock.map(function( item ) {return new PB.Authority( item ) });
+
+            var winnerList = $( '#winning-suburb' );
+            var loserList = $( '#losing-suburb' );
+            PB.LGAs.forEach( function( item ) {
+                $( '<option>', { value : item.id }).appendTo( winnerList ).text( item.name );
+                $( '<option>', { value : item.id }).appendTo( loserList ).text( item.name );
+            });
+
+            winnerList.chosen();
+            loserList.chosen();
+
+        });
     </script>
     <script id="battle-field-result-template" type="text/x-handlebars-template">
         <div class="row">
