@@ -24,9 +24,12 @@
 
     <!-- handlebars templates start here. -->
     <script id="attribute-template" type="text/x-handlebars-template">
-        <div class="list-group-item health">
-            <div class="list-group-item-heading">{{itemHeading}}</div>
-            <div class="sub small">{{label}}</div>
+        <div class="list-group-item health col-md-4" style="height: 20%">
+            <div class="sub small">
+                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                {{itemHeading}}
+            </div>
+            <div class="list-group-item-heading"><h4>{{label}}</h4></div>
         </div>
     </script>
 
@@ -42,7 +45,7 @@
                         </select>
                     </div>
                     <div class="btn-controls col-md-1 col-lg-1">
-                        <button type="submit" class="btn btn-danger " id="do-battle">Battle!</button>
+                        <button type="submit" class="btn btn-primary " id="do-battle">Battle!</button>
                     </div>
                     <div class="form-group col-md-5 col-lg-5">
                         <select data-placeholder="Choose the region you want to lose" class="form-control"
@@ -69,69 +72,14 @@
             </div>
         </div>
     </script>
-    <script>
-        $(document).ready(function () {
-            var mock = [
-                {
-                    "id": "20110",
-                    "name": "Alpine"
-                },
-                {
-                    "id": "20260",
-                    "name": "Ararat"
-                },
-                {
-                    "id": "20570",
-                    "name": "Ballarat"
-                },
-                {
-                    "id": "20660",
-                    "name": "Banyule"
-                },
-                {
-                    "id": "20740",
-                    "name": "Bass Coast"
-                },
-                {
-                    "id": "20830",
-                    "name": "Baw Baw"
-                },
-                {
-                    "id": "20910",
-                    "name": "Bayside"
-                },
-                {
-                    "id": "21010",
-                    "name": "Benalla"
-                },
-                {
-                    "id": "21110",
-                    "name": "Boroondara"
-                }
-            ];
 
-            PB.LGAs = mock.map(function (item) {
-                return new PB.Authority(item)
-            });
-
-            var winnerList = $('#winning-suburb');
-            var loserList = $('#losing-suburb');
-            PB.LGAs.forEach(function (item) {
-                $('<option>', {value: item.id}).appendTo(winnerList).text(item.name);
-                $('<option>', {value: item.id}).appendTo(loserList).text(item.name);
-            });
-
-            winnerList.chosen();
-            loserList.chosen();
-
-        });
-    </script>
     <script id="battle-field-result-template" type="text/x-handlebars-template">
         <div class="row">
-            <div class="col-lg-9">
+
+            <div class="col-md-6 col-lg-6">
                 <div id="winner" class="panel panel-success winner">
                     <div class="panel-heading">
-                        <h3 class="text"></h3>
+                        <center><h3 class="text"></h3></center>
                     </div>
                     <div class="panel-body">
                         <div class="list-group attributes">
@@ -139,10 +87,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-6 col-lg-6">
                 <div id="loser" class="panel panel-danger">
                     <div class="panel-heading">
-                        <h3><strike class="text"></strike></h3>
+                        <h3><center><strike class="text"></strike></center></h3>
                     </div>
                     <div class="panel-body">
                         <div class="list-group attributes">
@@ -150,24 +98,84 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div class="row">
+
+        </div>
+        <div class="row">
+
         </div>
     </script>
 </head>
 <body>
-<div class="container-fluid" style="margin-left: 3%; margin-right: 3%">
-    <div class="row">
-        <div class="page-header col-lg-12">
-            <h1>Postcode Battle! Suburbs do Battle!</h1>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
 
-            <h2></h2>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html">
+                Team LEVEL-6.3
+                <!--<img alt="Brand" src="assets/imgs/Logo.png" style="width: 2%;height: 2%">-->
+
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Battle Field <span class="sr-only">(current)</span></a></li>
+                <li><a href="https://public.tableau.com/shared/CWGWXNWNT?:display_count=yes" target="_blank">Tableau Graphs</a></li>
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu" role="menu">-->
+                        <!--<li><a href="#">Action</a></li>-->
+                        <!--<li><a href="#">Another action</a></li>-->
+                        <!--<li><a href="#">Something else here</a></li>-->
+                        <!--<li class="divider"></li>-->
+                        <!--<li><a href="#">Separated link</a></li>-->
+                        <!--<li class="divider"></li>-->
+                        <!--<li><a href="#">One more separated link</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            </ul>
+            <!--<form class="navbar-form navbar-left" role="search" abineguid="41CBE4443B29436D84620ED7C641F71D">-->
+                <!--<div class="form-group">-->
+                    <!--<input type="text" class="form-control" placeholder="Search">-->
+                <!--</div>-->
+                <!--<button type="submit" class="btn btn-default">Submit</button>-->
+            <!--</form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Who are we?</a></li>
+            </ul>
         </div>
     </div>
-    <div class="row">
-        <div id="app-main"></div>
+</nav>
+
+<div class="container-fluid" style="margin-left: 3%; margin-right: 3%">
+        <!--<nav class="navbar navbar-default">-->
+
+            <!-- /.container-fluid -->
+        <!--</nav>-->
+
+        <div class="row">
+            <div class="page-header col-lg-12" style="margin-top: 1%">
+                <h1>Postcode Battle! Suburbs do Battle!</h1>
+
+                <h2 style="display: none"></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div id="app-main"></div>
+        </div>
+        <div class="row">
+            <div class="footer"></div>
+        </div>
     </div>
-    <div class="row">
-        <div class="footer"></div>
-    </div>
-</div>
 </body>
 </html>
