@@ -183,7 +183,7 @@ class AttributeController extends DataAccess {
 
 		$compare = strtolower( $attribute[ 'comparator' ] );
 
-		if ( $compare == "?" || strlen( trim( $valueOne ) ) === 0 || strlen( trim( $valueTwo ) ) === 0 ) {
+		if ( $compare == "?" || strlen( trim( $valueOne ) ) === 0 || strlen( trim( $valueTwo ) ) === 0 || $compare == "middle" ) {
 			return self::UNKNOWN; // TODO: Don't have question markes in the source data...
 		}
 
@@ -204,7 +204,7 @@ class AttributeController extends DataAccess {
 				return self::EQUAL;
 			}
 		} else {
-			throw new RestException( "500", "Comaprator for attribute {$attribute['AttributeName']} should be 'lower' or 'higher', but it was '$compare'.'" );
+			throw new RestException( "500", "Comaprator for attribute {$attribute['attributeName']} should be 'lower' or 'higher', but it was '$compare'.'" );
 		}
 
 	}

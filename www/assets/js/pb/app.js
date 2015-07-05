@@ -50,21 +50,51 @@ $(document).ready(function () {
         }
         else {
             $("#app-main").html(PB.templates.battleFieldStartTemplate());
-            var p = $("#gallery").portfolio();
+            
+            var $winnerList = $( '#winning-suburb' );
+            var $loserList = $( '#losing-suburb' );
+            PB.LGAs.forEach( function( item ) {
+                $( '<option>', { value : item.id }).appendTo( $winnerList ).text( item.name );
+                $( '<option>', { value : item.id }).appendTo( $loserList ).text( item.name );
+            });
+
+            $winnerList.chosen();
+            $loserList.chosen();
+            
+            var p = $("#gallery").portfolio({
+                height: '70%', // gallery height
+                loop: true
+            });
             p.init();
-        
+            
             $("#do-battle").click(function (e) {
                 e.originalEvent.preventDefault();           
 
-                var $winner = $("#winning-suburb"),
-                    $loser = $("#losing-suburb"),
-                    winnerName = $winner.val(),
-                    loserName = $loser.val();
+                var winnerId = $winnerList.val(),
+                    loserId = $loserList.val(),
+                    winnerName,
+                    loserName;
+
+                for(var index in PB.LGAs) {
+                    if(winnerName && loserName) {
+                        break;
+                    }
+                    
+                    if (PB.LGAs[index].id === winnerId) {
+                        winnerName = PB.LGAs[index].name;
+                        continue;
+                    }
+                    else if (PB.LGAs[index].id === loserId) {
+                        loserName = PB.LGAs[index].name;
+                        continue;
+                    }
+                }
 
                 $(".page-header h2").text(winnerName + " vs. " + loserName);
               
                 $("#app-main").html(PB.templates.battleFieldResultTemplate());
-                generateBattleResults( winnerName, loserName );
+
+                PB.BattleController.getBattle( winnerId, loserId );
                 window.location.href = "index.html" + PB.HASH_URL_TEMPLATE.replace("{good_key}", winnerName).replace("{bad_key}", loserName);
             });
         }
