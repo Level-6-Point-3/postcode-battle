@@ -25,6 +25,13 @@ PB.templates = ( function ( module, Handlebars, $ ){
 
 		return template();
 	};
+
+    module.liveabilityIndexTemplate = function(){
+        var source =$("#liveability-index-template").html();
+        var template = Handlebars.compile(source);
+
+        return template();
+    };
 	
 	return module;
 } )( PB.templates || {}, Handlebars || {}, $ );

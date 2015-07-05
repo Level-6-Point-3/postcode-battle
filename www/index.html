@@ -7,7 +7,7 @@
     <script src="assets/js/lib/radio.min.js"></script>
     <script src="assets/js/lib/portfoliojs/js/portfolio.pack.min.js"></script>
     <script src="assets/js/lib/chosen.jquery.min.js"></script>
-    <!--<script src="assets/js/lib/imageScrolling/jquery.imagesScrolling.min.js"></script>-->
+    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
 
     <!-- PB Libraries -->
 
@@ -87,7 +87,7 @@
                         <center><h3 class="text"></h3></center>
                     </div>
                     <div class="panel-body" style="background-image: url('assets/imgs/Benalla.jpg')">
-                    <!--<div class="panel-body" style="background-image: url('{{winner.imageURL}}')">-->
+                        <!--<div class="panel-body" style="background-image: url('{{winner.imageURL}}')">-->
                         <div class="list-group attributes">
                         </div>
                     </div>
@@ -96,10 +96,12 @@
             <div class="col-md-6 col-lg-6">
                 <div id="loser" class="panel panel-danger">
                     <div class="panel-heading">
-                        <h3><center><strike class="text"></strike></center></h3>
+                        <h3>
+                            <center><strike class="text"></strike></center>
+                        </h3>
                     </div>
                     <div class="panel-body" style="background-image: url('assets/imgs/Cardinia.jpg')">
-                    <!--<div class="panel-body" style="background-image: url('{{loser.imageURL}}')">-->
+                        <!--<div class="panel-body" style="background-image: url('{{loser.imageURL}}')">-->
                         <div class="list-group attributes">
                         </div>
                     </div>
@@ -119,19 +121,52 @@
         <div class="container">
             <h2>Liveability index</h2>
 
-            <p>We see open government data as a chance for the government to inform its citizens, and for the citizens to inform the government; as a chance to foster communication and cooperation. In our project, we ask: where is infrastructure sufficient, and where are services lacking? If I want to move to a different suburb, where are my needs and interests best catered for?</p>
+            <p>We see open government data as a chance for the government to inform its citizens, and for the citizens
+                to inform the government; as a chance to foster communication and cooperation. In our project, we ask:
+                where is infrastructure sufficient, and where are services lacking? If I want to move to a different
+                suburb, where are my needs and interests best catered for?</p>
 
             <p>
-                We gather data of victorian suburbs and LGAs for a number of relevant life quality indicators. These indicators - collected from a wealth of open government datasets - include housing prices, number of schools and medical service providers, and crime and accident statistics.
-                We summarize the data into a general “liveability index” for each LGA, and allow users to specify -and weigh- indicators of interest. By displaying the results as a colour coded map, we allow an intuitive understanding the results.
+                We gather data of victorian suburbs and LGAs for a number of relevant life quality indicators. These
+                indicators - collected from a wealth of open government datasets - include housing prices, number of
+                schools and medical service providers, and crime and accident statistics.
+                We summarize the data into a general “liveability index” for each LGA, and allow users to specify -and
+                weigh- indicators of interest. By displaying the results as a colour coded map, we allow an intuitive
+                understanding the results.
             </p>
 
-            <p>Our project identifies both benefits and deficiencies of living in certain areas, and offers suggestions where strategic investment can increase the quality of life.</p>
+            <p>Our project identifies both benefits and deficiencies of living in certain areas, and offers suggestions
+                where strategic investment can increase the quality of life.</p>
 
             <a href="https://hackerspace.govhack.org/content/postcode-battle-liveability-index">
                 <h3>Vote for us @ GovHack!</h3>
             </a>
         </div>
+    </script>
+
+    <script id="liveability-index-template" type="text/x-handlebars-template">
+        <div class="container">
+            <div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
+                <noscript><a href='#'><img alt='Where in Victoria do you (want to) live? '
+                                           src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JH&#47;JH8HCDNX8&#47;1_rss.png'
+                                           style='border: none'/></a></noscript>
+                <object class='tableauViz' width='1004' height='869' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+                    <param name='path' value='shared&#47;JH8HCDNX8'/>
+                    <param name='toolbar' value='yes'/>
+                    <param name='static_image'
+                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JH&#47;JH8HCDNX8&#47;1.png'/>
+                    <param name='animate_transition' value='yes'/>
+                    <param name='display_static_image' value='yes'/>
+                    <param name='display_spinner' value='yes'/>
+                    <param name='display_overlay' value='yes'/>
+                    <param name='display_count' value='yes'/>
+                    <param name='showVizHome' value='no'/>
+                    <param name='bootstrapWhenNotified' value='true'/>
+                </object>
+            </div>
+        </div>
+
     </script>
 </head>
 <body>
@@ -139,7 +174,8 @@
     <div class="container-fluid">
 
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -149,33 +185,14 @@
             <a class="navbar-brand" href="index.html">
                 Team LEVEL-6.3
                 <!--<img alt="Brand" src="assets/imgs/Logo.png" style="width: 2%;height: 2%">-->
-
             </a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Battle Field <span class="sr-only">(current)</span></a></li>
-                <li><a href="https://public.tableau.com/shared/CWGWXNWNT?:display_count=yes" target="_blank">Livability Index</a></li>
-                <!--<li class="dropdown">-->
-                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
-                    <!--<ul class="dropdown-menu" role="menu">-->
-                        <!--<li><a href="#">Action</a></li>-->
-                        <!--<li><a href="#">Another action</a></li>-->
-                        <!--<li><a href="#">Something else here</a></li>-->
-                        <!--<li class="divider"></li>-->
-                        <!--<li><a href="#">Separated link</a></li>-->
-                        <!--<li class="divider"></li>-->
-                        <!--<li><a href="#">One more separated link</a></li>-->
-                    <!--</ul>-->
-                <!--</li>-->
+                <li><a id="liveability-index-nav" href="#">Liveability Index</a></li>
             </ul>
-            <!--<form class="navbar-form navbar-left" role="search" abineguid="41CBE4443B29436D84620ED7C641F71D">-->
-                <!--<div class="form-group">-->
-                    <!--<input type="text" class="form-control" placeholder="Search">-->
-                <!--</div>-->
-                <!--<button type="submit" class="btn btn-default">Submit</button>-->
-            <!--</form>-->
             <ul class="nav navbar-nav navbar-right">
                 <li><a id="who-are-we" href="#">Who are we?</a></li>
             </ul>
@@ -184,28 +201,23 @@
 </nav>
 
 <div class="container-fluid" style="margin-left: 3%; margin-right: 3%">
-        <!--<nav class="navbar navbar-default">-->
-
-            <!-- /.container-fluid -->
-        <!--</nav>-->
-
-        <div class="row">
-            <div class="page-header col-lg-12" style="margin-top: 1%">
-                <div class="col-md-7">
+    <div class="row">
+        <div class="page-header col-lg-12" style="margin-top: 1%">
+            <div class="col-md-7">
                 <h1>Postcode Battle! Suburbs do Battle!</h1>
-                </div>
-                <div class="col-md-4">
-                <img src="assets/imgs/PowSmall.png" style="height: 15%;"/>
-                </div>
-                <h2 style="display: none"></h2>
             </div>
-        </div>
-        <div class="row">
-            <div id="app-main"></div>
-        </div>
-        <div class="row">
-            <div class="footer"></div>
+            <div class="col-md-4">
+                <img src="assets/imgs/PowSmall.png" style="height: 15%;"/>
+            </div>
+            <h2 style="display: none"></h2>
         </div>
     </div>
+    <div class="row">
+        <div id="app-main"></div>
+    </div>
+    <div class="row">
+        <div class="footer"></div>
+    </div>
+</div>
 </body>
 </html>

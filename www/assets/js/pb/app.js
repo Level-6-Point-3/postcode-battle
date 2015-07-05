@@ -37,6 +37,13 @@ $(document).ready(function () {
         $( '#app-main' ).html( PB.templates.whoAreWeTemplate() );
     });
 
+    $( '#liveability-index-nav').click( function( event ) {
+        event.preventDefault();
+        $( '#app-main' ).html( PB.templates.liveabilityIndexTemplate() );
+        tableau._createNewVizesAndStartLoading();
+    });
+
+
     radio("getLocalAuthorities.done").subscribe(function () {
         // make sure nothing happense prior to loading local authorities
 
