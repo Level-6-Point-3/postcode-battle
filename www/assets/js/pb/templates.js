@@ -32,6 +32,6 @@ PB.templates = ( function ( module, Handlebars, $ ){
 
         return template();
     };
-	
+
 	return module;
 } )( PB.templates || {}, Handlebars || {}, $ );

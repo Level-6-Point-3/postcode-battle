@@ -32,31 +32,13 @@ $(document).ready(function () {
         debugger;
     });
 
-    $( '#who-are-we').click( function( event ) {
-        event.preventDefault();
-        $('.navbar-nav li').removeClass("active");
-        $('#who-are-we').parent().addClass("active");
-        $( '#app-main' ).html( PB.templates.whoAreWeTemplate() );
-    });
+    var processUrlFragment = function() {
 
-    $( '#liveability-index-nav').click( function( event ) {
-        event.preventDefault();
-        $('.navbar-nav li').removeClass("active");
-        $('#liveability-index-nav').parent().addClass("active");
-        $( '#app-main' ).html( PB.templates.liveabilityIndexTemplate() );
-        tableau._createNewVizesAndStartLoading();
-    });
-
-
-    radio("getLocalAuthorities.done").subscribe(function () {
-        // make sure nothing happense prior to loading local authorities
-
-        if (window.location.hash !== "") {
-            var pattern = /^\#why-is-(.+)-better-than-(.+)$/,
-                result = pattern.exec(window.location.hash);
+        if (PB.URL_FRAGMENTS.RUN_BATTLE.test( window.location.hash )) {
+            var result = PB.URL_FRAGMENTS.RUN_BATTLE.exec(window.location.hash);
 
             if (result === undefined || result[1] === "" || result[2] === "") {
-                window.location = "index.html";
+                window.location = "/#battle";
             }
             else {
                 var winnerName = result[1].replace( "_", " " );
@@ -67,8 +49,17 @@ $(document).ready(function () {
 
                 generateBattleResults(winnerName, loserName);
             }
-        }
-        else {
+
+            highlightNav('battle-nav');
+
+        } else if (PB.URL_FRAGMENTS.SHOW_LIVEABILITY.test( window.location.hash )) {
+            highlightNav('liveability-nav');
+            $( '#app-main' ).html( PB.templates.liveabilityIndexTemplate() );
+            tableau._createNewVizesAndStartLoading();
+        } else if (PB.URL_FRAGMENTS.WHO_WE_ARE.test( window.location.hash )) {
+            highlightNav('about-nav');
+            $( '#app-main' ).html( PB.templates.whoAreWeTemplate() );
+        } else {
             $("#app-main").html(PB.templates.battleFieldStartTemplate());
 
             var $winnerList = $('#winning-suburb');
@@ -126,9 +117,25 @@ $(document).ready(function () {
                 loserName = loserName.replace( " ", "_" );
                 window.location.href = "/" + PB.HASH_URL_TEMPLATE.replace("{good_key}", winnerName).replace("{bad_key}", loserName);
             });
+            highlightNav('battle-nav');
         }
 
+    };
+
+    var highlightNav = function( id ) {
+        $('#navbar').find('.navbar-link').removeClass("active");
+        $('#' + id).addClass("active");
+    };
+
+    // make sure nothing happens prior to loading local authorities
+    radio("getLocalAuthorities.done").subscribe(function () {
+        processUrlFragment();
     });
+
+    window.onhashchange = function(event) {
+        event.preventDefault();
+        processUrlFragment();
+    };
     
     PB.LGAController.getLocalAuthorities();
 });

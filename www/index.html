@@ -7,6 +7,7 @@
     <script src="assets/js/lib/radio.min.js"></script>
     <script src="assets/js/lib/portfoliojs/js/portfolio.pack.min.js"></script>
     <script src="assets/js/lib/chosen.jquery.min.js"></script>
+    <script src="assets/js/lib/bootstrap.min.js"></script>
     <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
 
     <!-- PB Libraries -->
@@ -147,30 +148,35 @@
     <script id="liveability-index-template" type="text/x-handlebars-template">
         <div class="container">
             <div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
-                <noscript><a href='#'><img alt='Where in Victoria do you (want to) live? '
-                                           src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JH&#47;JH8HCDNX8&#47;1_rss.png'
-                                           style='border: none'/></a></noscript>
+                <noscript><a href='http:&#47;&#47;postcode-battle.serwylo.com'><img
+                        alt='Where in Victoria do you (want to) live? '
+                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;Battle&#47;Dashboard1&#47;1_rss.png'
+                        style='border: none'/></a></noscript>
                 <object class='tableauViz' width='1004' height='869' style='display:none;'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-                    <param name='path' value='shared&#47;JH8HCDNX8'/>
+                    <param name='site_root' value=''/>
+                    <param name='name' value='Battle&#47;Dashboard1'/>
+                    <param name='tabs' value='no'/>
                     <param name='toolbar' value='yes'/>
                     <param name='static_image'
-                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JH&#47;JH8HCDNX8&#47;1.png'/>
+                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;Battle&#47;Dashboard1&#47;1.png'/>
                     <param name='animate_transition' value='yes'/>
                     <param name='display_static_image' value='yes'/>
                     <param name='display_spinner' value='yes'/>
                     <param name='display_overlay' value='yes'/>
                     <param name='display_count' value='yes'/>
                     <param name='showVizHome' value='no'/>
+                    <param name='showTabs' value='y'/>
                     <param name='bootstrapWhenNotified' value='true'/>
                 </object>
             </div>
         </div>
 
     </script>
+
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav id="navbar" class="navbar navbar-default">
     <div class="container-fluid">
 
         <div class="navbar-header">
@@ -182,19 +188,19 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="/">
+            <div id="home-nav" class="navbar-brand">
                 Team LEVEL-6.3
                 <!--<img alt="Brand" src="assets/imgs/Logo.png" style="width: 2%;height: 2%">-->
-            </a>
+            </div>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Battle Field <span class="sr-only">(current)</span></a></li>
-                <li><a id="liveability-index-nav" href="#">Liveability Index</a></li>
+                <li id="battle-nav" class="navbar-link"><a href="/#battle">Battle Field <span class="sr-only">(current)</span></a></li>
+                <li id="liveability-nav" class="navbar-link"><a href="/#live">Liveability Index</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a id="who-are-we" href="#">Who are we?</a></li>
+                <li id="about-nav" class="navbar-link"><a id="who-are-we" href="#about">Who are we?</a></li>
             </ul>
         </div>
     </div>
