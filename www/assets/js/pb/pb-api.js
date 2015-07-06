@@ -5,7 +5,7 @@ PB.api = ( function ( module, $ ) {
       return "http://localhost:8080";
     }
     else if (PB.env === "live") {
-      return "http://postcode-battle.serwylo.com";
+      return "http://new.postcode-battle.serwylo.com";
     }
 
     return "";
