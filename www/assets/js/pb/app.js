@@ -9,11 +9,10 @@ var generateBattleResults = function (winnerName, loserName) {
 
         if (PB.LGAs[index].name === winnerName) {
             winnerId = PB.LGAs[index].id;
-            continue;
         }
-        else if (PB.LGAs[index].name === loserName) {
+        
+        if (PB.LGAs[index].name === loserName) {
             loserId = PB.LGAs[index].id;
-            continue;
         }
     }
 
@@ -96,11 +95,10 @@ PB.processCurrentPage = function () {
 
                 if (PB.LGAs[index].id === winnerId) {
                     winnerName = PB.LGAs[index].name;
-                    continue;
                 }
-                else if (PB.LGAs[index].id === loserId) {
+                
+                if (PB.LGAs[index].id === loserId) {
                     loserName = PB.LGAs[index].name;
-                    continue;
                 }
             }
 
