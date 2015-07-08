@@ -1,0 +1,80 @@
+_AllText:
+  color: '#FFFFFF'
+
+_TextFullWidth:
+  extends: _AllText
+  align: center
+  x: 60
+  width: 705
+
+Text_Title_Back:
+  extends: _TextFullWidth
+  y: 60
+  font_size: 60
+
+Text_Title_Front:
+  extends: _AllText
+  y: 70
+  x: 260
+  font_size: 45
+
+Text_Category_Back:
+  extends: _TextFullWidth
+  y: 180
+  font_size: 40
+
+Text_Category_Front:
+  extends: _AllText
+  y: 170
+  x: 260
+  font_size: 30
+
+Text_Attribute_Front:
+  extends: _TextFullWidth
+  font_size: 40
+  y: 360
+  ellipsize: false
+
+Text_Value_Front:
+  extends: _TextFullWidth
+  font_size: 150
+  y: 550
+
+Text_Description_Front:
+  extends: _TextFullWidth
+  font_size: 30
+  y: 890
+  ellipsize: false
+
+LGA_Image_Back:
+  x: 40
+  y: 300
+  width: 745
+  height: 785
+
+LGA_Image_Front:
+  x: 40
+  y: 40
+  width: 180
+  height: 220
+
+Background_Title_Back:
+  x: 40
+  y: 40
+  width: 745
+  height: 220
+  fill_color: '#88DD88'
+  stroke_color: '#FFFFFF00'
+
+Background_Title_Front:
+  extends: Background_Title_Back
+  width: 565
+  x: 220
+  fill_color: '#8888DD'
+
+Background_Content_Front:
+  extends: Background_Title_Front
+  x: 40
+  y: 300
+  width: 745
+  height: 785
