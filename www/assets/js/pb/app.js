@@ -26,6 +26,11 @@ PB.processCurrentPage = function () {
         $('#navbar').find('.navbar-link').removeClass("active");
         $('#' + id).addClass("active");
     };
+    
+    var resetSocialMedia = function () {
+        $(".social-media").html(PB.templates.socialMedia.facebookTemplate());
+        FB.XFBML.parse();  
+    };
 
     var app = Sammy(function () {
         
@@ -33,12 +38,14 @@ PB.processCurrentPage = function () {
         this.get(PB.URL_FRAGMENTS.WHO_WE_ARE, function () {
             highlightNav('about-nav');
             $('#app-main').html(PB.templates.whoAreWeTemplate());
+            resetSocialMedia();
         });
 
         this.get(PB.URL_FRAGMENTS.SHOW_LIVEABILITY, function () {
             highlightNav('liveability-nav');
             $('#app-main').html(PB.templates.liveabilityIndexTemplate());
             tableau._createNewVizesAndStartLoading();
+            resetSocialMedia();
         });
 
         this.get(PB.URL_FRAGMENTS.RUN_BATTLE, function () {
@@ -49,6 +56,7 @@ PB.processCurrentPage = function () {
             $(".page-header h2").text(winnerName + " vs. " + loserName);
 
             generateBattleResults(winnerName, loserName);
+            resetSocialMedia();
         });
 
         this.get(PB.URL_FRAGMENTS.SHOW_BATTLE, function (context) {
@@ -107,6 +115,7 @@ PB.processCurrentPage = function () {
             $("#do-battle").click(doBattleClickHandler);
 
             highlightNav('battle-nav');
+            resetSocialMedia();
         });
 
         // default route, if nothing matches. So you want to 
