@@ -1,228 +1,235 @@
 <html>
-<head>
-    <title>Postcode Battle</title>
-    <!-- Libraries -->
-    <script src="assets/js/lib/jquery-2.1.1.min.js"></script>
-    <script src="assets/js/lib/sammy.js"></script>
-    <script src="assets/js/lib/handlebars-v3.0.3.js"></script>
-    <script src="assets/js/lib/radio.min.js"></script>
-    <script src="assets/js/lib/portfoliojs/js/portfolio.pack.min.js"></script>
-    <script src="assets/js/lib/chosen.jquery.min.js"></script>
-    <script src="assets/js/lib/bootstrap.min.js"></script>
-    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
-
-    <!-- PB Libraries -->
-
-    <script src="assets/js/pb/init.js"></script>
-    <script src="assets/js/pb/pb-api.js"></script>
-    <script src="assets/js/pb/pb-domain.js"></script>
-    <script src="assets/js/pb/templates.js"></script>
-    <script src="assets/js/pb/pb-controller.js"></script>
-    <script src="assets/js/pb/app.js"></script>
-
-    <link href="assets/css/postcode-battle.css" rel="stylesheet"/>
-    <link href="assets/js/lib/bootstrap.min.css" rel="stylesheet"/>
-    <link href="assets/js/lib/chosen.min.css" rel="stylesheet"/>
-
-    <!-- handlebars templates start here. -->
-    <script id="attribute-template" type="text/x-handlebars-template">
-        <div class="list-group-item health col-md-4" style="height: 20%;opacity: 0.86">
-            <div class="sub small">
-                {{#if winner}}
-                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                {{else}}
-                <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                {{/if}}
-
-                {{itemHeading}}
-            </div>
-            <div class="list-group-item-heading"><h4>{{label}}</h4></div>
-        </div>
-    </script>
-
-    <script id="battle-field-start-template" type="text/x-handlebars-template">
-
-        <div class="row">
-            <div class="battle-field">
-                <div class="battle-ground">
-                    <div class="form-group col-md-5 col-lg-5">
-                        <select data-placeholder="Choose the region you want to win" class="form-control"
-                                id="winning-suburb">
-                            <option value=""></option>
-                        </select>
-                    </div>
-                    <div class="btn-controls col-md-1 col-lg-1">
-                        <button type="submit" class="btn btn-primary " id="do-battle">Battle!</button>
-                    </div>
-                    <div class="form-group col-md-5 col-lg-5">
-                        <select data-placeholder="Choose the region you want to lose" class="form-control"
-                                id="losing-suburb">
-                            <option value=""></option>
-                        </select>
-                    </div>
+    
+    <head>
+        <title>Postcode Battle</title>
+        <!-- Libraries -->
+        <script src="assets/js/lib/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/lib/sammy.js"></script>
+        <script src="assets/js/lib/handlebars-v3.0.3.js"></script>
+        <script src="assets/js/lib/radio.min.js"></script>
+        <script src="assets/js/lib/portfoliojs/js/portfolio.pack.min.js"></script>
+        <script src="assets/js/lib/chosen.jquery.min.js"></script>
+        <script src="assets/js/lib/bootstrap.min.js"></script>
+        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+        <!-- PB Libraries -->
+        <script src="assets/js/pb/init.js"></script>
+        <script src="assets/js/pb/pb-api.js"></script>
+        <script src="assets/js/pb/pb-domain.js"></script>
+        <script src="assets/js/pb/templates.js"></script>
+        <script src="assets/js/pb/pb-controller.js"></script>
+        <script src="assets/js/pb/app.js"></script>
+        <link href="assets/css/postcode-battle.css" rel="stylesheet" />
+        <link href="assets/js/lib/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/js/lib/chosen.min.css" rel="stylesheet" />
+        <!-- handlebars templates start here. -->
+        <script id="attribute-template" type="text/x-handlebars-template">
+            <div class="list-group-item health col-md-4" style="height: 20%;opacity: 0.86">
+                <div class="sub small">
+                    {{#if winner}}
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    {{else}}
+                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                    {{/if}}
+    
+                    {{itemHeading}}
                 </div>
+                <div class="list-group-item-heading"><h4>{{label}}</h4></div>
             </div>
-        </div>
-        <div class="row" style="margin-top: 6%"></div>
-
-        <div class="row">
-            <div class="slides-show">
-                <div id="gallery">
-                    <img data-src="assets/imgs/Benalla.jpg"/>
-                    <img data-src="assets/imgs/Boroondara.jpg"/>
-                    <img data-src="assets/imgs/Brimbank.jpg"/>
-                    <img data-src="assets/imgs/Buloke.jpg"/>
-                    <img data-src="assets/imgs/Darebin.jpg"/>
-                    <img data-src="assets/imgs/Cardinia.jpg"/>
-                    <img data-src="assets/imgs/Campaspe.jpg"/>
-                </div>
-            </div>
-        </div>
-    </script>
-
-    <script id="battle-field-result-template" type="text/x-handlebars-template">
-        <div class="row">
-
-            <div class="col-md-6 col-lg-6">
-                <div id="winner" class="panel panel-success winner">
-                    <div class="panel-heading">
-                        <center><h3 class="text"></h3></center>
-                    </div>
-                    <div class="panel-body" style="background-image: url('assets/imgs/Benalla.jpg')">
-                        <!--<div class="panel-body" style="background-image: url('{{winner.imageURL}}')">-->
-                        <div class="list-group attributes">
+        </script>
+        <script id="battle-field-start-template" type="text/x-handlebars-template">
+            <div class="row">
+                <div class="battle-field">
+                    <div class="battle-ground">
+                        <div class="form-group col-md-5 col-lg-5">
+                            <select data-placeholder="Choose the region you want to win" class="form-control"
+                                    id="winning-suburb">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="btn-controls col-md-1 col-lg-1">
+                            <button type="submit" class="btn btn-primary " id="do-battle">Battle!</button>
+                        </div>
+                        <div class="form-group col-md-5 col-lg-5">
+                            <select data-placeholder="Choose the region you want to lose" class="form-control"
+                                    id="losing-suburb">
+                                <option value=""></option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
-                <div id="loser" class="panel panel-danger">
-                    <div class="panel-heading">
-                        <h3>
-                            <center><strike class="text"></strike></center>
-                        </h3>
-                    </div>
-                    <div class="panel-body" style="background-image: url('assets/imgs/Cardinia.jpg')">
-                        <!--<div class="panel-body" style="background-image: url('{{loser.imageURL}}')">-->
-                        <div class="list-group attributes">
-                        </div>
+            <div class="row" style="margin-top: 6%"></div>
+    
+            <div class="row">
+                <div class="slides-show">
+                    <div id="gallery">
+                        <img data-src="assets/imgs/Benalla.jpg"/>
+                        <img data-src="assets/imgs/Boroondara.jpg"/>
+                        <img data-src="assets/imgs/Brimbank.jpg"/>
+                        <img data-src="assets/imgs/Buloke.jpg"/>
+                        <img data-src="assets/imgs/Darebin.jpg"/>
+                        <img data-src="assets/imgs/Cardinia.jpg"/>
+                        <img data-src="assets/imgs/Campaspe.jpg"/>
                     </div>
                 </div>
             </div>
-
-        </div>
-        <div class="row">
-
-        </div>
-        <div class="row">
-
-        </div>
-    </script>
-
-    <script id="who-are-we-template" type="text/x-handlebars-template">
-        <div class="container">
-            <h2>Liveability index</h2>
-
-            <p>We see open government data as a chance for the government to inform its citizens, and for the citizens
-                to inform the government; as a chance to foster communication and cooperation. In our project, we ask:
-                where is infrastructure sufficient, and where are services lacking? If I want to move to a different
-                suburb, where are my needs and interests best catered for?</p>
-
-            <p>
-                We gather data of victorian suburbs and LGAs for a number of relevant life quality indicators. These
-                indicators - collected from a wealth of open government datasets - include housing prices, number of
-                schools and medical service providers, and crime and accident statistics.
-                We summarize the data into a general “liveability index” for each LGA, and allow users to specify -and
-                weigh- indicators of interest. By displaying the results as a colour coded map, we allow an intuitive
-                understanding the results.
-            </p>
-
-            <p>Our project identifies both benefits and deficiencies of living in certain areas, and offers suggestions
-                where strategic investment can increase the quality of life.</p>
-
-            <a href="https://hackerspace.govhack.org/content/postcode-battle-liveability-index">
-                <h3>Vote for us @ GovHack!</h3>
-            </a>
-        </div>
-    </script>
-
-    <script id="liveability-index-template" type="text/x-handlebars-template">
-        <div class="container">
-            <div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
-                <noscript><a href='#'><img alt='Where in Victoria do you (want to) live? '
-                                           src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;Battle2&#47;Dashboard1&#47;1_rss.png'
-                                           style='border: none'/></a></noscript>
-                <object class='tableauViz' width='1004' height='869' style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
-                    <param name='site_root' value=''/>
-                    <param name='name' value='Battle2&#47;Dashboard1'/>
-                    <param name='tabs' value='no'/>
-                    <param name='toolbar' value='yes'/>
-                    <param name='static_image'
-                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;Battle2&#47;Dashboard1&#47;1.png'/>
-                    <param name='animate_transition' value='yes'/>
-                    <param name='display_static_image' value='yes'/>
-                    <param name='display_spinner' value='yes'/>
-                    <param name='display_overlay' value='yes'/>
-                    <param name='display_count' value='yes'/>
-                    <param name='showVizHome' value='no'/>
-                    <param name='showTabs' value='y'/>
-                    <param name='bootstrapWhenNotified' value='true'/>
-                </object>
+        </script>
+        <script id="battle-field-result-template" type="text/x-handlebars-template">
+            <div class="row">
+    
+                <div class="col-md-6 col-lg-6">
+                    <div id="winner" class="panel panel-success winner">
+                        <div class="panel-heading">
+                            <center><h3 class="text"></h3></center>
+                        </div>
+                        <div class="panel-body" style="background-image: url('assets/imgs/Benalla.jpg')">
+                            <!--<div class="panel-body" style="background-image: url('{{winner.imageURL}}')">-->
+                            <div class="list-group attributes">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div id="loser" class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h3>
+                                <center><strike class="text"></strike></center>
+                            </h3>
+                        </div>
+                        <div class="panel-body" style="background-image: url('assets/imgs/Cardinia.jpg')">
+                            <!--<div class="panel-body" style="background-image: url('{{loser.imageURL}}')">-->
+                            <div class="list-group attributes">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="row">
+    
+            </div>
+            <div class="row">
+    
+            </div>
+        </script>
+        <script id="who-are-we-template" type="text/x-handlebars-template">
+            <div class="container">
+                <h2>Liveability index</h2>
+    
+                <p>We see open government data as a chance for the government to inform its citizens, and for the citizens
+                    to inform the government; as a chance to foster communication and cooperation. In our project, we ask:
+                    where is infrastructure sufficient, and where are services lacking? If I want to move to a different
+                    suburb, where are my needs and interests best catered for?</p>
+    
+                <p>
+                    We gather data of victorian suburbs and LGAs for a number of relevant life quality indicators. These
+                    indicators - collected from a wealth of open government datasets - include housing prices, number of
+                    schools and medical service providers, and crime and accident statistics.
+                    We summarize the data into a general “liveability index” for each LGA, and allow users to specify -and
+                    weigh- indicators of interest. By displaying the results as a colour coded map, we allow an intuitive
+                    understanding the results.
+                </p>
+    
+                <p>Our project identifies both benefits and deficiencies of living in certain areas, and offers suggestions
+                    where strategic investment can increase the quality of life.</p>
+    
+                <a href="https://hackerspace.govhack.org/content/postcode-battle-liveability-index">
+                    <h3>Vote for us @ GovHack!</h3>
+                </a>
+            </div>
+        </script>
+        <script id="liveability-index-template" type="text/x-handlebars-template">
+            <div class="container">
+                <div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
+                    <noscript><a href='#'><img alt='Where in Victoria do you (want to) live? '
+                                               src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;Battle2&#47;Dashboard1&#47;1_rss.png'
+                                               style='border: none'/></a></noscript>
+                    <object class='tableauViz' width='1004' height='869' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+                        <param name='site_root' value=''/>
+                        <param name='name' value='Battle2&#47;Dashboard1'/>
+                        <param name='tabs' value='no'/>
+                        <param name='toolbar' value='yes'/>
+                        <param name='static_image'
+                               value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ba&#47;Battle2&#47;Dashboard1&#47;1.png'/>
+                        <param name='animate_transition' value='yes'/>
+                        <param name='display_static_image' value='yes'/>
+                        <param name='display_spinner' value='yes'/>
+                        <param name='display_overlay' value='yes'/>
+                        <param name='display_count' value='yes'/>
+                        <param name='showVizHome' value='no'/>
+                        <param name='showTabs' value='y'/>
+                        <param name='bootstrapWhenNotified' value='true'/>
+                    </object>
+                </div>
+            </div>
+        </script>
+    </head>
+    
+    <body>
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=1443600649260979";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <nav id="navbar" class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div id="home-nav" class="navbar-brand">Team LEVEL-6.3
+                        <!--<img alt="Brand" src="assets/imgs/Logo.png" style="width: 2%;height: 2%">-->
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li id="battle-nav" class="navbar-link">
+                            <a href="/#battle">Battle Field <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li id="liveability-nav" class="navbar-link">
+                            <a href="/#live">Liveability Index</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="about-nav" class="navbar-link">
+                            <a id="who-are-we" href="#about">Who are we?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" style="margin-left: 3%; margin-right: 3%">
+            <div class="row">
+                <div class="page-header col-lg-12" style="margin-top: 1%">
+                    <div class="col-md-6">
+                        <h1>Postcode Battle! Suburbs do Battle!</h1>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="assets/imgs/PowSmall.png" style="height: 15%;" />
+                    </div>
+                    <div class="social-media">
+                        <div class="fb-send" id="fb-send-button"></div>
+                        <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                    </div>
+                    <h2 style="display: none"></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div id="app-main"></div>
+            </div>
+            <div class="row">
+                <div class="footer"></div>
             </div>
         </div>
+    </body>
 
-    </script>
-</head>
-<body>
-<nav id="navbar" class="navbar navbar-default">
-    <div class="container-fluid">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <div id="home-nav" class="navbar-brand">
-                Team LEVEL-6.3
-                <!--<img alt="Brand" src="assets/imgs/Logo.png" style="width: 2%;height: 2%">-->
-            </div>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li id="battle-nav" class="navbar-link"><a href="/#battle">Battle Field <span class="sr-only">(current)</span></a></li>
-                <li id="liveability-nav" class="navbar-link"><a href="/#live">Liveability Index</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li id="about-nav" class="navbar-link"><a id="who-are-we" href="#about">Who are we?</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<div class="container-fluid" style="margin-left: 3%; margin-right: 3%">
-    <div class="row">
-        <div class="page-header col-lg-12" style="margin-top: 1%">
-            <div class="col-md-7">
-                <h1>Postcode Battle! Suburbs do Battle!</h1>
-            </div>
-            <div class="col-md-4">
-                <img src="assets/imgs/PowSmall.png" style="height: 15%;"/>
-            </div>
-            <h2 style="display: none"></h2>
-        </div>
-    </div>
-    <div class="row">
-        <div id="app-main"></div>
-    </div>
-    <div class="row">
-        <div class="footer"></div>
-    </div>
-</div>
-</body>
 </html>
