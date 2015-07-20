@@ -15,3 +15,17 @@ This project was created over a single weekend of GovHack 2015 in Melbourne.
 The web page at http://postcode-battle.serwylo.com is as it was at the end of GovHack. It will stay this way for judging purposes.
 
 To visit the more up to date version, including development that occured after the GovHack competition, check out http://new.postcode-battle.serwylo.com.
+
+# Dependencies
+
+## Web server
+
+The following dependencies will likely be available in most linux package managers:
+
+* sqlite3
+* php
+* php-sqlite
+
+To get the REST server running, you will also need to [install composer](https://getcomposer.org) and then run:
+
+`./composer.phar install`
