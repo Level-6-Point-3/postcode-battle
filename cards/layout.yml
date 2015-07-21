@@ -1,0 +1,104 @@
+_AllText:
+  color: '#FFFFFF'
+
+_TextFullWidth:
+  extends: _AllText
+  align: center
+  x: 60
+  width: 705
+
+Text_Title_Back:
+  extends: _TextFullWidth
+  y: 60
+  font_size: 60
+
+Text_Title_Front:
+  extends: _AllText
+  y: 70
+  x: 260
+  font_size: 45
+
+Text_Category_Back:
+  extends: _TextFullWidth
+  y: 180
+  font_size: 40
+
+Text_Category_Front:
+  extends: _AllText
+  y: 170
+  x: 260
+  font_size: 30
+
+Text_Attribute_Front:
+  extends: _TextFullWidth
+  font_size: 50
+  y: 340
+  ellipsize: false
+
+Text_Value_Front:
+  extends: _TextFullWidth
+  y: 620
+
+Text_Rank_Front:
+  extends: _TextFullWidth
+  font_size: 50
+  y: 985
+  ellipsize: false
+
+Text_Description_Front:
+  extends: _TextFullWidth
+  font_size: 30
+  y: 500
+  ellipsize: false
+
+LGA_Image_Back:
+  x: 40
+  y: 300
+  width: 745
+  height: 785
+
+LGA_Image_Front:
+  x: 40
+  y: 40
+  width: 180
+  height: 220
+
+_Background:
+  x: 40
+  width: 745
+  stroke_color: '#FFFFFF00'
+
+Background_Title_Back:
+  extends: _Background
+  y: 40
+  height: 220
+  fill_color: '#88DD88'
+
+_Background_Front:
+  extends: _Background
+  fill_color: '#8888DD'
+
+Background_Title_Front:
+  extends: _Background_Front
+  width: 565
+  height: 220
+  y: 40
+  x: 220
+
+Background_Content_Front:
+  extends: _Background_Front
+  y: 300
+  height: 625
+
+Background_Rank_Front:
+  extends: _Background_Front
+  y: 965
+  height: 120
+
+Foreground_Rank_Front:
+  extends: _Background_Front
+  # fill_color: '#6666BB'
+  y: 975
+  x: 50
+  width: 725
+  height: 100
