@@ -2,3 +2,4 @@
 .idea
 *.iml
 setup/*.db
+cards/build

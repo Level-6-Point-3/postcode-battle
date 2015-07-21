@@ -31,19 +31,24 @@ Text_Category_Front:
 
 Text_Attribute_Front:
   extends: _TextFullWidth
-  font_size: 40
-  y: 360
+  font_size: 50
+  y: 340
   ellipsize: false
 
 Text_Value_Front:
   extends: _TextFullWidth
-  font_size: 150
-  y: 550
+  y: 620
+
+Text_Rank_Front:
+  extends: _TextFullWidth
+  font_size: 50
+  y: 985
+  ellipsize: false
 
 Text_Description_Front:
   extends: _TextFullWidth
   font_size: 30
-  y: 890
+  y: 500
   ellipsize: false
 
 LGA_Image_Back:
@@ -58,23 +63,42 @@ LGA_Image_Front:
   width: 180
   height: 220
 
-Background_Title_Back:
+_Background:
   x: 40
-  y: 40
   width: 745
-  height: 220
-  fill_color: '#88DD88'
   stroke_color: '#FFFFFF00'
 
-Background_Title_Front:
-  extends: Background_Title_Back
-  width: 565
-  x: 220
+Background_Title_Back:
+  extends: _Background
+  y: 40
+  height: 220
+  fill_color: '#88DD88'
+
+_Background_Front:
+  extends: _Background
   fill_color: '#8888DD'
 
+Background_Title_Front:
+  extends: _Background_Front
+  width: 565
+  height: 220
+  y: 40
+  x: 220
+
 Background_Content_Front:
-  extends: Background_Title_Front
-  x: 40
+  extends: _Background_Front
   y: 300
-  width: 745
-  height: 785
+  height: 625
+
+Background_Rank_Front:
+  extends: _Background_Front
+  y: 965
+  height: 120
+
+Foreground_Rank_Front:
+  extends: _Background_Front
+  # fill_color: '#6666BB'
+  y: 975
+  x: 50
+  width: 725
+  height: 100

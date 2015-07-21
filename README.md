@@ -16,9 +16,9 @@ The web page at http://postcode-battle.serwylo.com is as it was at the end of Go
 
 To visit the more up to date version, including development that occured after the GovHack competition, check out http://new.postcode-battle.serwylo.com.
 
-# Dependencies
+# Running Website
 
-## Web server
+## Dependencies
 
 The following dependencies will likely be available in most linux package managers:
 
@@ -29,3 +29,39 @@ The following dependencies will likely be available in most linux package manage
 To get the REST server running, you will also need to [install composer](https://getcomposer.org) and then run:
 
 `./composer.phar install`
+
+## Setting up the database
+
+There should be a database already included in the git repository (`postcode-battle.db`). However, if the data which went into creating this database changes, then it can be recreated by using the `setup-db.sh` script. This needs to be run from within the `setup` directory. It will write an sqlite3 database to `setup/postcode-battle.db` by default, for you to then copy to the root of the repository to be used by the webserver.
+
+## Using PHPs inbuilt Webserver
+
+Before running, you should change the `www/assets/js/pb/init.js` file so that the final line says: `PB.env = "dev";`. This will ensure that requests to the PHP server will be directed to http://localhost:8080/.
+
+Then, the webserver can be run by executing the following command from the shell to run PHP's inbuilt webserver (for debugging only):
+
+`php -S localhost:8080 www/`
+
+Where `www/` is the path to the `www/` directory in the repository. For now, it has to be on port 8080.
+
+# Card Game
+
+## Dependencies
+
+The card game is built using a ruby library called "squib" and makes use of ImageMagick to pre-process images of the local government areas.
+
+`gem install rmagick squib`
+
+## Building
+
+In order to generate the cards, cd into the `cards/` directory, and execute:
+
+`create-cards.sh build`
+
+This will download relevant images for the cards, then create cards and put them in the `build/_output` directory. Running
+
+`create-cards.sh clean` will remove the `build/` directory, forcing all images to be re-downloaded next time `create-cards.sh build` is run.
+
+If the `postcode-battle.db` database has changed, then running `create-cards.sh build` again will regenerate the cards with the new data.
+
+There is not currently a way to get the cards into a nice printable format, but that is on the TODO list.
