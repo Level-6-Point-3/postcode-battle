@@ -8,4 +8,3 @@ PB.URL_FRAGMENTS = {
 };
 PB.Attributes = [];
 PB.LGAs = [];
-PB.env = "live"; // dev or live
